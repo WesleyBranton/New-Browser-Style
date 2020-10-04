@@ -299,8 +299,7 @@ select:-moz-focusring * {
 .browser-style .panel-list-item:focus,
 .browser-style .panel-list-item.focus,
 .browser-style .panel-list-item.focused {
-  box-shadow: 0 0 0 1px var(--blue-50) inset, 0 0 0 1px var(--blue-50),
-    0 0 0 4px var(--blue-50-a30);
+  box-shadow: 0 0 0 1px var(--blue-50) inset, 0 0 0 1px var(--blue-50), 0 0 0 4px var(--blue-50-a30);
 }
 
 .browser-style button.secondary {
