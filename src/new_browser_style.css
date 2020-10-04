@@ -93,7 +93,7 @@ select:-moz-focusring * {
 }
 
 /* Section */
-.browser-style .panel-section-separator-solid {
+.browser-style .panel-section-separator {
   background: var(--grey-90-a30);
   height: 1px;
 }
