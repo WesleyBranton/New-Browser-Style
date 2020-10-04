@@ -1,3 +1,10 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+
+/* Version 1.0 */
+
+/* Variables */
 :root {
   /* Colors */
   --grey-10: rgb(249, 249, 250);
@@ -113,9 +120,7 @@ select:-moz-focusring * {
   width: 100%;
 }
 
-.browser-style
-  .panel-section:not(.panel-section-header):not(.panel-section-list)
-  *:first-child {
+.browser-style .panel-section:not(.panel-section-header):not(.panel-section-list) *:first-child {
   flex: 1;
 }
 
@@ -342,8 +347,7 @@ select:-moz-focusring * {
 }
 
 /* Text input & Selects */
-.browser-style
-  input:not([type="radio"]):not([type="checkbox"]):not([type="range"]),
+.browser-style input:not([type="radio"]):not([type="checkbox"]):not([type="range"]),
 .browser-style select,
 .browser-style textarea {
   border: 1px solid var(--grey-90-a20);
