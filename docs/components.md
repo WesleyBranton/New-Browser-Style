@@ -15,6 +15,7 @@ Some code snippets may contain placeholders. These are surrounded with % charact
 > - [List menu](#list-menu)
 > - [Message bars](#message-bars)
 > - [Buttons](#buttons)
+> - [Links](#links)
 
 ## Sections
 Sections are container elements for parts of the UI. This will ensure that the content is spaced correctly on the screen. You do not need to use sections, but it is strongly recommended.
@@ -212,7 +213,7 @@ Buttons can include two pieces of information: the type and size. The size is op
 
 The special expand button is intended to be used to control collapsible sections.
 
-### Types
+#### Types
 Types | Class
 --- | ---
 Primary | `default`
@@ -244,4 +245,31 @@ Expand | `expander` | Do not put text in the button<br>Exclude other classes
 <button class="default puffy">I Agree</button>
 <br>
 <button class="ghost">I Do Not Agree</button>
+```
+
+## Links
+When using this library, links are automatically marked as external or internal. The intention is to provide transparency to the user by clarifying when they are clicking a link that will take them away from the website they are currently on.
+
+Links are automatically detected as external if the URL attached to them includes a protocol (`HTTP://` for example).
+
+Classes are provided to allow developers to manually specify the link type. It's highly recommended that developers include the link type class to ensure that links are not incorrectly marked by the automatic detection. These classes always override automatic detection, so they can be used to fix incorrectly marked links. But these classes should **NOT** used to mislead users into thinking that they are clicking an internal link that's actually external or vice versa.
+
+#### Type
+Type | Class | ---
+--- | --- | ---
+Auto Detect | None | 1.1+
+External | `external` | 1.1+
+Internal | `internal` | 1.1+
+
+#### Code
+```html
+<a href="%URL%" class="%TYPE%">%TEXT%</a>
+```
+
+#### Example
+```html
+<a href="/about">Auto detect (is internal)</a>
+<a href="https://mozilla.org">Auto detect (is external)</a>
+<a href="/about" class="internal">Internal</a>
+<a href="https://mozilla.org" class="external">External</a>
 ```
