@@ -98,14 +98,17 @@ select:-moz-focusring * {
   height: 1px;
 }
 
-.browser-style .panel-section-separator-dashed {
+.browser-style .panel-section-separator.dashed {
+  background: none;
   border-top: dashed var(--grey-90-a30);
   height: 1px;
 }
-.browser-style .panel-section-separator-dotted {
+.browser-style .panel-section-separator.dotted {
+  background: none;
   border-top: 3px dotted var(--grey-90-a30);
 }
-.browser-style .panel-section-separator-rounded {
+.browser-style .panel-section-separator.rounded {
+  background: none;
   border-top: 5px solid var(--grey-90-a30);
   border-radius: 3px;
 }

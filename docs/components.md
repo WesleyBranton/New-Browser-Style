@@ -84,19 +84,19 @@ The footer is a special section designed to be displayed at the bottom of your c
 ```
 
 ## Dividers
-A divider is used to separate sections. You can use different types of dividers, depending on the class you use.
+A divider is used to separate sections. You can use different types of dividers by specifying an additional class to indicate the type.
 
 #### Types
 Type | Class | Version
 --- | --- | ---
-Solid | `panel-section-separator` | 1.0+
-Dashed | `panel-section-separator-dashed` | 1.1+
-Rounded | `panel-section-separator-rounded` | 1.1+
-Dotted | `panel-section-separator-dotted` | 1.1+
+Solid | None | 1.0+
+Dashed | `dashed` | 1.1+
+Rounded | `rounded` | 1.1+
+Dotted | `dotted` | 1.1+
 
 #### Code
 ```html
-<div class="%TYPE%"></div>
+<div class="panel-section-separator %TYPE%"></div>
 ```
 
 ## Tabs
