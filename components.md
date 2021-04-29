@@ -88,12 +88,33 @@ The footer is a special section designed to be displayed at the bottom of your c
 A divider is used to separate sections. You can use different types of dividers by specifying an additional class to indicate the type.
 
 #### Types
-Type | Class | Version
---- | --- | ---
-Solid | None | 1.0+
-Dashed | `dashed` | 1.1+
-Rounded | `rounded` | 1.1+
-Dotted | `dotted` | 1.1+
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Class</th>
+        <th>Version</th>
+    </tr>
+    <tr>
+        <td>Solid</td>
+        <td>None</td>
+        <td>1.0+</td>
+    </tr>
+    <tr>
+        <td>Dashed</td>
+        <td><code>dashed</code></td>
+        <td>1.1+</td>
+    </tr>
+    <tr>
+        <td>Rounded</td>
+        <td><code>rounded</code></td>
+        <td>1.1+</td>
+    </tr>
+    <tr>
+        <td>Dotted</td>
+        <td><code>dotted</code></td>
+        <td>1.1+</td>
+    </tr>
+<table>
 
 #### Code
 ```html
@@ -104,10 +125,20 @@ Dotted | `dotted` | 1.1+
 A tab bar consists of a single container element with button children. Tabs will appear selected by adding the appropriate class to the tab button. A tab bar can contain regular dividers between each tab, but these are not required.
 
 #### Types
-Type | Class
---- | ---
-Default | None
-Selected | `selected`
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Class</th>
+    </tr>
+    <tr>
+        <td>Default</td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td>Selected</td>
+        <td><code>selected</code></td>
+    </tr>
+<table>
 
 #### Code
 ```html
@@ -138,10 +169,20 @@ Selected | `selected`
 A list menu is a container with items in it. Each item has three components within: an icon, text and text shortcut. The icon is displayed on the left side of the element and should contain an HTML `<img>` element. The text is the main text of the item. The text shortcut is text that's displayed on the right side of the item. Only the text element is required in a list item. The other components can be excluded.
 
 #### Types
-Type | Class
---- | ---
-Default | None
-Disabled | `disabled`
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Class</th>
+    </tr>
+    <tr>
+        <td>Default</td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td>Disabled</td>
+        <td><code>disabled</code></td>
+    </tr>
+<table>
 
 #### Code
 ```html
@@ -188,12 +229,28 @@ Message bars can contain text messages. The bar includes an icon on the left sid
 You can create your own custom message bar type by excluded the type from the class. You can then set the CSS `background-color` of the message bar to change the color and the `background-image` CSS to add an icon.
 
 #### Types
-Type | Class
---- | ---
-General | `general`
-Success | `success`
-Warning | `warning`
-Error | `error`
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Class</th>
+    </tr>
+    <tr>
+        <td>General</td>
+        <td><code>general</code></td>
+    </tr>
+    <tr>
+        <td>Success</td>
+        <td><code>success</code></td>
+    </tr>
+    <tr>
+        <td>Warning</td>
+        <td><code>warning</code></td>
+    </tr>
+    <tr>
+        <td>Error</td>
+        <td><code>error</code></td>
+    </tr>
+<table>
 
 #### Code
 ```html
@@ -214,23 +271,58 @@ Buttons can include two pieces of information: the type and size. The size is op
 The special expand button is intended to be used to control collapsible sections.
 
 #### Types
-Types | Class
---- | ---
-Primary | `default`
-Secondary | `secondary`
-Tertiary | `ghost`
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Class</th>
+    </tr>
+    <tr>
+        <td>Primary</td>
+        <td><code>default</code></td>
+    </tr>
+    <tr>
+        <td>Secondary</td>
+        <td><code>secondary</code></td>
+    </tr>
+    <tr>
+        <td>Tertiary</td>
+        <td><code>ghost</code></td>
+    </tr>
+<table>
 
 #### Sizes
-Size | Class
---- | ---
-Regular | None
-Small | `micro`
-Large | `puffy`
+<table>
+    <tr>
+        <th>Size</th>
+        <th>Class</th>
+    </tr>
+    <tr>
+        <td>Regular</td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td>Small</td>
+        <td><code>micro</code></td>
+    </tr>
+    <tr>
+        <td>Large</td>
+        <td><code>puffy</code></td>
+    </tr>
+<table>
 
 #### Special
-Type | Class | Notes
---- | --- | ---
-Expand | `expander` | Do not put text in the button<br>Exclude other classes
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Class</th>
+        <th>Notes</th>
+    </tr>
+    <tr>
+        <td>Expand</td>
+        <td><code>expander</code></td>
+        <td>Do not put text in the button<br>Exclude other classes</td>
+    </tr>
+<table>
 
 #### Code
 ```html
@@ -255,11 +347,28 @@ Links are automatically detected as external if the URL attached to them include
 Classes are provided to allow developers to manually specify the link type. It's highly recommended that developers include the link type class to ensure that links are not incorrectly marked by the automatic detection. These classes always override automatic detection, so they can be used to fix incorrectly marked links. But these classes should **NOT** used to mislead users into thinking that they are clicking an internal link that's actually external or vice versa.
 
 #### Type
-Type | Class | ---
---- | --- | ---
-Auto Detect | None | 1.1+
-External | `external` | 1.1+
-Internal | `internal` | 1.1+
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Class</th>
+        <th>Version</th>
+    </tr>
+    <tr>
+        <td>Auto Detect</td>
+        <td>None</td>
+        <td>1.1+</td>
+    </tr>
+    <tr>
+        <td>External</td>
+        <td><code>external</code></td>
+        <td>1.1+</td>
+    </tr>
+    <tr>
+        <td>Internal</td>
+        <td><code>internal</code></td>
+        <td>1.1+</td>
+    </tr>
+<table>
 
 #### Code
 ```html
