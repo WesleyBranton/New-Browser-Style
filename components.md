@@ -114,7 +114,7 @@ A divider is used to separate sections. You can use different types of dividers 
         <td><code>dotted</code></td>
         <td>1.1+</td>
     </tr>
-<table>
+</table>
 
 #### Code
 ```html
@@ -138,7 +138,7 @@ A tab bar consists of a single container element with button children. Tabs will
         <td>Selected</td>
         <td><code>selected</code></td>
     </tr>
-<table>
+</table>
 
 #### Code
 ```html
@@ -182,7 +182,7 @@ A list menu is a container with items in it. Each item has three components with
         <td>Disabled</td>
         <td><code>disabled</code></td>
     </tr>
-<table>
+</table>
 
 #### Code
 ```html
@@ -250,7 +250,7 @@ You can create your own custom message bar type by excluded the type from the cl
         <td>Error</td>
         <td><code>error</code></td>
     </tr>
-<table>
+</table>
 
 #### Code
 ```html
@@ -288,7 +288,7 @@ The special expand button is intended to be used to control collapsible sections
         <td>Tertiary</td>
         <td><code>ghost</code></td>
     </tr>
-<table>
+</table>
 
 #### Sizes
 <table>
@@ -308,7 +308,7 @@ The special expand button is intended to be used to control collapsible sections
         <td>Large</td>
         <td><code>puffy</code></td>
     </tr>
-<table>
+</table>
 
 #### Special
 <table>
@@ -322,7 +322,7 @@ The special expand button is intended to be used to control collapsible sections
         <td><code>expander</code></td>
         <td>Do not put text in the button<br>Exclude other classes</td>
     </tr>
-<table>
+</table>
 
 #### Code
 ```html
@@ -368,7 +368,7 @@ Classes are provided to allow developers to manually specify the link type. It's
         <td><code>internal</code></td>
         <td>1.1+</td>
     </tr>
-<table>
+</table>
 
 #### Code
 ```html
