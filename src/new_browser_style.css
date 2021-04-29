@@ -252,7 +252,7 @@ select:-moz-focusring * {
 }
 
 .browser-style a:not(.internal)[href*="//"]::after,
-.browser-style a.external {
+.browser-style a.external::after {
   background-image: var(--link-icon);
   background-repeat: no-repeat;
   background-size: contain;
