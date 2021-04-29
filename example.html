@@ -2,163 +2,183 @@
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at https://mozilla.org/MPL/2.0/. -->
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>New Browser Style Sample</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="src/new_browser_style.css">
-    <style>
-      body {
-        width: 80%;
-        margin: auto;
-      }
-    </style>
-  </head>
-  <body class="browser-style">
-    
-    <!-- Section -->
-    <h1>Section</h1>
-    <div class="panel-section">
-      <label>Test Link</label>
-      <div>
-        <a href="https://mozilla.org" target="_blank">External Link</a>
-      </div>
-    </div>
-    
-    <!-- Section with description -->
-    <h1>Section With Descriptive Text</h1>
-    <div class="panel-section has-help">
-      <label>Test Link</label>
-      <div>
-        <a href="#">Internal Link</a>
-      </div>
-    </div>
-    <div class="panel-section help-row">
-      Descriptive text 
-    </div>
-    
-    <!-- Section Divider -->
-    <h1>Section Dividers</h1>
-    <h3>solid</h3>
-    <div class="panel-section-separator"></div>
-    <h3>dashed divider</h3>
-    <div class="panel-section-separator dashed"></div>
-    <h3>rounded</h3>
-    <div class="panel-section-separator rounded"></div>
-    <h3>dotted</h3>
-    <div class="panel-section-separator dotted"></div>
-  
-    
-    <!-- Section Note -->
-    <h1>Section Note</h1>
-    <div class="panel-section note">
-      This is a section note
-    </div>
-    
-    <!-- Section Header -->
-    <header class="panel-section panel-section-header">
-      <img class="icon-section-header" src="">
-      <h1 class="text-section-header">Header</h1>
-    </header>
-    
-    <!-- Section Footer -->
-    <footer class="panel-section panel-section-footer">
-      <button class="default">Save</button>
-      <button class="secondary">Cancel</button>
-    </footer>
-    
-    <!-- Section Tabs -->
-    <h1>Section Tabs</h1>
-    <section class="panel-section-tabs">
-      <button type="button" class="panel-section-tabs-button selected">Tab</button>
-      <div class="panel-section-tabs-separator"></div>
-      <button type="button" class="panel-section-tabs-button">Tab</button>
-      <div class="panel-section-tabs-separator"></div>
-      <button type="button" class="panel-section-tabs-button">Tab</button>
-      <div class="panel-section-tabs-separator"></div>
-      <button type="button" class="panel-section-tabs-button">Tab</button>
-    </section>
-    
-    <!-- List/Menu -->
-    <h1>List/Menu</h1>
-    <div class="panel-section panel-section-list">
-      <div class="panel-list-item">
-        <div class="icon"></div>
-        <div class="text">List Item</div>
-        <div class="text-shortcut">Ctrl-L</div>
-      </div>
-
-      <div class="panel-list-item">
-        <div class="icon"></div>
-        <div class="text">List Item</div>
-        <div class="text-shortcut"></div>
-      </div>
-
-      <div class="panel-section-separator"></div>
-
-      <div class="panel-list-item disabled">
-        <div class="icon"></div>
-        <div class="text">Disabled List Item</div>
-        <div class="text-shortcut"></div>
-      </div>
-
-      <div class="panel-section-separator"></div>
-
-      <div class="panel-list-item">
-        <div class="icon"></div>
-        <div class="text">List Item</div>
-        <div class="text-shortcut"></div>
-      </div>
-
-      <div class="panel-list-item">
-        <div class="icon"></div>
-        <div class="text">List Item</div>
-        <div class="text-shortcut"></div>
-      </div>
-    </div>
-    
-    <!-- Radio Buttons -->
-    <h1>Radio Buttons</h1>
-    <label><input name="example-radio" type="radio"> Option #1</label>
-    <label><input name="example-radio" type="radio"> Option #2</label>
-    <label><input name="example-radio" type="radio"> Option #3</label>
-    <label><input name="example-radio" type="radio"> Option #4</label>
-    
-    <!-- Checkbox -->
-    <h1>Checkbox</h1>
-    <label><input name="example-checkbox" type="checkbox"> Click me!</label>
-    
-    <!-- Text Input -->
-    <h1>Text Input</h1>
-    <input type="text" placeholder="Text goes here..."></input>
-    
-    <!-- Text Area -->
-    <h1>Text Area</h1>
-    <textarea placeholder="Put text here..."></textarea>
-    
-    <!-- Select -->
-    <h1>Select</h1>
-    <select>
-      <option>Option 1</option>
-      <option>Option 2</option>
-    </select>
-    
-    <!-- Message Bars -->
-    <h1>Message Bars</h1>
-    <div class="message-bar general">General message bar</div>
-    <div class="message-bar success">Success message bar</div>
-    <div class="message-bar warning">Warning message bar</div>
-    <div class="message-bar error">Error message bar</div>
-    
-    <!-- Buttons -->
-    <h1>Buttons</h1>
-    <button class="expander">Micro</button>
-    <button class="default">Normal</button>
-    <button class="default puffy">Puffy</button>
-    <button class="default">Default</button>
-    <button class="secondary">Secondary</button>
-    <button class="ghost">Ghost</button>
-    
-  </body>
-</html>
+   <!DOCTYPE html>
+   <html>
+     <head>
+       <title>New Browser Style Sample</title>
+       <meta charset="utf-8">
+       <link rel="stylesheet" href="src/new_browser_style.css">
+       <style>
+         body {
+           background: #f9f9fa;
+         }
+         .container{
+           width: 95%;
+           max-width: 1000px;
+           margin: 16px auto;
+           background: white;
+           padding: 16px;
+           box-sizing: border-box;
+           box-shadow: 0 1px 4px var(--grey-90-a10);
+           border-radius: 4px;
+         }
+         .documentation {
+           font-weight: normal !important;
+         }
+       </style>
+     </head>
+     <body class="browser-style">
+       <div class="container">
+         
+         <!-- Section -->
+         <h1>Section <span class="documentation">(<a href="components.md#regular-section" target="_blank" class="internal">Documentation</a>)</span></h1>
+         <div class="panel-section">
+           <label>Test Link</label>
+           <div>
+             <a href="https://mozilla.org" target="_blank">External Link</a>
+           </div>
+         </div>
+         
+         <!-- Section with description -->
+         <h1>Section With Descriptive Text <span class="documentation">(<a href="components.md#section-with-description" target="_blank" class="internal">Documentation</a>)</span></h1>
+         <div class="panel-section has-help">
+           <label>Test Link</label>
+           <div>
+             <a href="#">Internal Link</a>
+           </div>
+         </div>
+         <div class="panel-section help-row">
+           Descriptive text 
+         </div>
+   
+         <!-- Section Note -->
+         <h1>Section Note <span class="documentation">(<a href="components.md#section-note" target="_blank" class="internal">Documentation</a>)</span></h1>
+         <div class="panel-section note">
+           This is a section note
+         </div>
+   
+         <!-- Header -->
+         <h1>Header <span class="documentation">(<a href="components.md#header" target="_blank" class="internal">Documentation</a>)</span></h1>
+         <header class="panel-section panel-section-header">
+           <img class="icon-section-header" src="">
+           <h1 class="text-section-header">Header</h1>
+         </header>
+         
+         <!-- Footer -->
+         <h1>Footer <span class="documentation">(<a href="components.md#footer" target="_blank" class="internal">Documentation</a>)</span></h1>
+         <footer class="panel-section panel-section-footer">
+           <button class="default">Save</button>
+           <button class="secondary">Cancel</button>
+         </footer>
+         
+         <!-- Section Divider -->
+         <h1>Section Dividers <span class="documentation">(<a href="components.md#dividers" target="_blank" class="internal">Documentation</a>)</span></h1>
+         <h3>solid</h3>
+         <div class="panel-section-separator"></div>
+         <h3>dashed divider</h3>
+         <div class="panel-section-separator dashed"></div>
+         <h3>rounded</h3>
+         <div class="panel-section-separator rounded"></div>
+         <h3>dotted</h3>
+         <div class="panel-section-separator dotted"></div>
+         
+         <!-- Section Tabs -->
+         <h1>Section Tabs <span class="documentation">(<a href="components.md#tabs" target="_blank" class="internal">Documentation</a>)</span></h1>
+         <section class="panel-section-tabs">
+           <button type="button" class="panel-section-tabs-button selected">Tab</button>
+           <div class="panel-section-tabs-separator"></div>
+           <button type="button" class="panel-section-tabs-button">Tab</button>
+           <div class="panel-section-tabs-separator"></div>
+           <button type="button" class="panel-section-tabs-button">Tab</button>
+           <div class="panel-section-tabs-separator"></div>
+           <button type="button" class="panel-section-tabs-button">Tab</button>
+         </section>
+         
+         <!-- List/Menu -->
+         <h1>List/Menu <span class="documentation">(<a href="components.md#list-menu" target="_blank" class="internal">Documentation</a>)</span></h1>
+         <div class="panel-section panel-section-list">
+           <div class="panel-list-item">
+             <div class="icon"></div>
+             <div class="text">List Item</div>
+             <div class="text-shortcut">Ctrl-L</div>
+           </div>
+   
+           <div class="panel-list-item">
+             <div class="icon"></div>
+             <div class="text">List Item</div>
+             <div class="text-shortcut"></div>
+           </div>
+   
+           <div class="panel-section-separator"></div>
+   
+           <div class="panel-list-item disabled">
+             <div class="icon"></div>
+             <div class="text">Disabled List Item</div>
+             <div class="text-shortcut"></div>
+           </div>
+   
+           <div class="panel-section-separator"></div>
+   
+           <div class="panel-list-item">
+             <div class="icon"></div>
+             <div class="text">List Item</div>
+             <div class="text-shortcut"></div>
+           </div>
+   
+           <div class="panel-list-item">
+             <div class="icon"></div>
+             <div class="text">List Item</div>
+             <div class="text-shortcut"></div>
+           </div>
+         </div>
+         
+         <!-- Message Bars -->
+         <h1>Message Bars <span class="documentation">(<a href="components.md#message-bars" target="_blank" class="internal">Documentation</a>)</span></h1>
+         <div class="message-bar general">General message bar</div>
+         <div class="message-bar success">Success message bar</div>
+         <div class="message-bar warning">Warning message bar</div>
+         <div class="message-bar error">Error message bar</div>
+         
+         <!-- Buttons -->
+         <h1>Buttons <span class="documentation">(<a href="components.md#buttons" target="_blank" class="internal">Documentation</a>)</span></h1>
+         <button class="expander"></button>
+         <button class="default">Normal</button>
+         <button class="default puffy">Puffy</button>
+         <button class="default">Default</button>
+         <button class="secondary">Secondary</button>
+         <button class="ghost">Ghost</button>
+   
+         <!-- Links -->
+         <h1>Links <span class="documentation">(<a href="components.md#links" target="_blank" class="internal">Documentation</a>)</span></h1>
+         <a href="#" class="internal">Internal Link</a><br>
+         <a href="#" class="external">External Link</a>
+   
+         <!-- Radio Buttons -->
+         <h1>Radio Buttons <span class="documentation">(No Special Documentation)</span></h1>
+         <label><input name="example-radio" type="radio"> Option #1</label>
+         <label><input name="example-radio" type="radio"> Option #2</label>
+         <label><input name="example-radio" type="radio"> Option #3</label>
+         <label><input name="example-radio" type="radio"> Option #4</label>
+         
+         <!-- Checkbox -->
+         <h1>Checkbox <span class="documentation">(No Special Documentation)</span></h1>
+         <label><input name="example-checkbox" type="checkbox"> Click me!</label>
+         
+         <!-- Text Input -->
+         <h1>Text Input <span class="documentation">(No Special Documentation)</span></h1>
+         <input type="text" placeholder="Text goes here..."></input>
+         
+         <!-- Text Area -->
+         <h1>Text Area <span class="documentation">(No Special Documentation)</span></h1>
+         <textarea placeholder="Put text here..."></textarea>
+         
+         <!-- Select -->
+         <h1>Select <span class="documentation">(No Special Documentation)</span></h1>
+         <select>
+           <option>Option 1</option>
+           <option>Option 2</option>
+         </select>
+         
+       </div>
+     </body>
+   </html>
