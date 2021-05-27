@@ -37,12 +37,12 @@ This library supports both light and dark mode. The theme class **MUST** be set 
     <tr>
         <td>Light</td>
         <td><code>browser-style-light</code></td>
-        <td>1.2+</td>
+        <td>2.0+</td>
     </tr>
     <tr>
         <td>Dark</td>
         <td><code>browser-style-dark</code></td>
-        <td>1.2+</td>
+        <td>2.0+</td>
     </tr>
 </table>
 
@@ -82,7 +82,7 @@ If no page layout is specified, the layout defaults to Inline mode, which works 
     <tr>
         <td>Page</td>
         <td><code>browser-style-page</code></td>
-        <td>1.2+</td>
+        <td>2.0+</td>
     </tr>
 </table>
 
