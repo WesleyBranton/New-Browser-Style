@@ -73,7 +73,6 @@
 
 /* Page reset */
 * {
-  color: var(--grey-90);
   font-size: 15px;
 }
 
@@ -85,6 +84,7 @@ body {
   margin: 0;
   padding: 0;
   user-select: none;
+  color: var(--grey-90);
 }
 
 body.browser-style-page {
@@ -113,7 +113,6 @@ select:-moz-focusring {
 }
 
 select:-moz-focusring * {
-  color: #000;
   text-shadow: none;
 }
 
