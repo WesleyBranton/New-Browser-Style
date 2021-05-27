@@ -4,6 +4,7 @@ This page includes the documentation for all of the UI components in this librar
 Some code snippets may contain placeholders. These are surrounded with % characters. For example, `%TEXT%` is a placeholder for some text.
 
 > **Table of Contents**
+> - [Page Layout](#page-layout)
 > - [Sections](#sections)
 >   - [Regular section](#regular-section)
 >   - [Section with description](#section-with-description)
@@ -16,6 +17,50 @@ Some code snippets may contain placeholders. These are surrounded with % charact
 > - [Message bars](#message-bars)
 > - [Buttons](#buttons)
 > - [Links](#links)
+
+## Page Layout
+When working with browser extensions, you have the option to open content in the browser's UI or a new tab. For example, for an options page, you can display the options on the `about:addons` page in Firefox or open the options in a new tab.
+
+Setting the page layout to Page mode adds a body background and puts the page content in a centered container, similar to the styling provided for Firefox browser pages. If you are using the Page layout, the class **MUST** be placed in the document's body element and the body element **MUST** have a container element that uses the <code>browser-style-container</code> class.
+
+If no page layout is specified, the layout defaults to Inline mode, which works best when it's displayed in a browserAction popup or internal options page.
+
+#### Layouts
+<table>
+    <tr>
+        <th>Layout</th>
+        <th>Class</th>
+        <th>Version</th>
+    </tr>
+    <tr>
+        <td>Inline</td>
+        <td>None</td>
+        <td>1.0+</td>
+    </tr>
+    <tr>
+        <td>Page</td>
+        <td><code>browser-style-page</code></td>
+        <td>1.2+</td>
+    </tr>
+</table>
+
+#### Code
+```html
+<body class="browser-style %LAYOUT%">
+    <div class="browser-style-container">
+        <!-- Content -->
+    </div>
+</body>
+```
+
+#### Example
+```html
+<body class="browser-style browser-style-page">
+    <div class="browser-style-container">
+        <!-- Content -->
+    </div>
+</body>
+```
 
 ## Sections
 Sections are container elements for parts of the UI. This will ensure that the content is spaced correctly on the screen. You do not need to use sections, but it is strongly recommended.
