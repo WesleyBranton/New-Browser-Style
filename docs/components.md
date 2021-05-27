@@ -4,6 +4,7 @@ This page includes the documentation for all of the UI components in this librar
 Some code snippets may contain placeholders. These are surrounded with % characters. For example, `%TEXT%` is a placeholder for some text.
 
 > **Table of Contents**
+> - [Theme](#theme)
 > - [Page Layout](#page-layout)
 > - [Sections](#sections)
 >   - [Regular section](#regular-section)
@@ -17,6 +18,47 @@ Some code snippets may contain placeholders. These are surrounded with % charact
 > - [Message bars](#message-bars)
 > - [Buttons](#buttons)
 > - [Links](#links)
+
+## Theme
+This library supports both light and dark mode. The theme class **MUST** be set on the HTML element of the document. Light mode will be used as the default theme if no theme class is set.
+
+#### Themes
+<table>
+    <tr>
+        <th>Theme</th>
+        <th>Class</th>
+        <th>Version</th>
+    </tr>
+    <tr>
+        <td>Light</td>
+        <td>None</td>
+        <td>1.0+</td>
+    </tr>
+    <tr>
+        <td>Light</td>
+        <td><code>browser-style-light</code></td>
+        <td>1.2+</td>
+    </tr>
+    <tr>
+        <td>Dark</td>
+        <td><code>browser-style-dark</code></td>
+        <td>1.2+</td>
+    </tr>
+</table>
+
+#### Code
+```html
+    <html class="%THEME%">
+        <!-- Content -->
+    </html>
+```
+
+#### Example
+```html
+    <html class="browser-style-dark">
+        <!-- Content -->
+    </html>
+```
 
 ## Page Layout
 When working with browser extensions, you have the option to open content in the browser's UI or a new tab. For example, for an options page, you can display the options on the `about:addons` page in Firefox or open the options in a new tab.
