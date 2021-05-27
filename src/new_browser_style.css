@@ -504,6 +504,7 @@ select:-moz-focusring * {
 
 .browser-style select {
   -moz-appearance: none;
+  appearance: none;
   background-image: var(--down-icon);
   background-position: left calc(100% - 8px) bottom 50%;
   background-repeat: no-repeat;
