@@ -141,15 +141,10 @@
 }
 
 /* Page reset */
-* {
-  font-size: 15px;
-}
-
 body {
   background: var(--container-background);
   box-sizing: border-box;
   cursor: default;
-  font: caption;
   margin: 0;
   padding: 0;
   user-select: none;
@@ -189,21 +184,25 @@ select:-moz-focusring * {
 .browser-style .panel-section-separator {
   background: var(--border-color);
   height: 1px;
+  height: max(1px, 0.05em);
 }
 
 .browser-style .panel-section-separator.dashed {
   background: none;
   border-top: dashed var(--border-color);
   height: 1px;
+  height: max(1px, 0.05em);
 }
 .browser-style .panel-section-separator.dotted {
   background: none;
   border-top: 3px dotted var(--border-color);
+  border-top: max(3px, 0.15em) dotted var(--border-color);
 }
 .browser-style .panel-section-separator.rounded {
   background: none;
   border-top: 5px solid var(--border-color);
-  border-radius: 3px;
+  border-top: max(5px, 0.25em) solid var(--border-color);
+  border-radius: 0.15em;
 }
 
 .browser-style .panel-section {
@@ -211,7 +210,7 @@ select:-moz-focusring * {
   box-sizing: border-box;
   display: flex;
   margin: auto;
-  padding: 16px;
+  padding: 1em;
   width: 100%;
 }
 
@@ -225,21 +224,24 @@ select:-moz-focusring * {
 
 .browser-style .help-row {
   color: var(--text-color-fade);
-  padding: 4px 16px 16px 16px;
+  padding: 0.25em 1em 1em 1em;
 }
 
 /* Special section */
 .browser-style .panel-section.note {
   border: 1px solid var(--border-color);
+  border: max(1px, 0.05em) solid var(--border-color);
   color: var(--text-color-fade);
   font-style: italic;
 }
 
 /* Header */
 .browser-style .panel-section-header .icon-section-header {
-  height: 32px;
+  height: 2em;
+  max-height: 128px;
+  width: 2em;
+  max-width: 128px;
   margin-right: 1em;
-  width: 32px;
 }
 
 .browser-style .panel-section-header .text-section-header {
@@ -261,33 +263,34 @@ select:-moz-focusring * {
 /* Tabs */
 .browser-style .panel-section-tabs {
   display: flex;
-  height: auto;
 }
 
 .browser-style .panel-section-tabs-button {
   background: none;
   border: 2px solid transparent;
+  border: max(2px, 0.1em) solid transparent;
   cursor: pointer;
   flex: 1;
-  height: 32px;
+  min-height: 2em;
+  padding: 0.2em;
   color: var(--text-color);
 }
 
 .browser-style .tall .panel-section-tabs-button {
-  height: 48px;
+  min-height: 3em;
 }
 
 .browser-style .panel-section-tabs-button:hover,
 .browser-style .panel-section-tabs-button.hover {
   background: var(--tab-button-background-hover);
-  border-bottom: 2px solid var(--tab-button-border);
+  border-bottom-color: var(--tab-button-border);
 }
 
 .browser-style .panel-section-tabs-button:active,
 .browser-style .panel-section-tabs-button.active,
 .browser-style .panel-section-tabs-button.pressed {
   background: var(--tab-button-background-active);
-  border-bottom: 2px solid var(--tab-button-border);
+  border-bottom-color: var(--tab-button-border);
 }
 
 .browser-style .panel-section-tabs-button.selected:hover,
@@ -302,13 +305,14 @@ select:-moz-focusring * {
 }
 
 .browser-style .panel-section-tabs-button.selected {
-  border-bottom: 2px solid var(--tab-button-color-selected);
+  border-bottom-color: var(--tab-button-color-selected);
   color: var(--tab-button-color-selected);
 }
 
 .browser-style .panel-section-tabs-separator {
   background-color: var(--border-color);
   width: 1px;
+  width: max(1px, 0.05em);
   z-index: 99;
 }
 
@@ -337,7 +341,7 @@ select:-moz-focusring * {
 .browser-style a:focus,
 .browser-style a.focus,
 .browser-style a.focused {
-  box-shadow: 0 0 0 2px var(--focus-color), 0 0 0 6px var(--focus-color-fade);
+  box-shadow: 0 0 0 0.1em var(--focus-color), 0 0 0 0.3em var(--focus-color-fade);
 }
 
 .browser-style a:not(.internal)[href*="//"]::after,
@@ -347,8 +351,8 @@ select:-moz-focusring * {
   background-size: contain;
   content: "";
   display: inline-block;
-  height: 16px;
-  width: 16px;
+  height: 1em;
+  width: 1em;
   vertical-align: middle;
   margin: -.3rem .15rem 0 .25rem;
 }
@@ -356,12 +360,11 @@ select:-moz-focusring * {
 /* Buttons */
 .browser-style button {
   border: none;
-  border-radius: 2px;
+  border-radius: 0.1em;
   cursor: pointer;
-  font-size: 13px;
-  height: 32px;
-  min-width: 132px;
-  padding: 0 8px;
+  font-size: 110%;
+  min-width: 7em;
+  padding: 0.25em 0.5em;
   text-align: center;
   width: auto;
 }
@@ -372,16 +375,14 @@ select:-moz-focusring * {
 }
 
 .browser-style button.micro {
-  font-size: 11px;
-  height: 24px;
-  min-width: 0px;
+  font-size: 90%;
+  min-width: 0;
 }
 
 .browser-style button.puffy {
-  border-radius: 4px;
-  font-size: 15px;
-  height: 48px;
-  padding: 0 16px;
+  border-radius: 0.2em;
+  font-size: 125%;
+  padding: 0.5em 1em;
 }
 
 .browser-style button.default {
@@ -409,7 +410,7 @@ select:-moz-focusring * {
 .browser-style .panel-list-item:focus,
 .browser-style .panel-list-item.focus,
 .browser-style .panel-list-item.focused {
-  box-shadow: 0 0 0 1px var(--focus-color) inset, 0 0 0 1px var(--focus-color), 0 0 0 4px var(--focus-color-fade);
+  box-shadow: 0 0 0 0.05em var(--focus-color) inset, 0 0 0 0.05em var(--focus-color), 0 0 0 0.2em var(--focus-color-fade);
 }
 
 .browser-style button.secondary {
@@ -431,7 +432,7 @@ select:-moz-focusring * {
 .browser-style button.ghost {
   background: none;
   color: var(--button-ghost-text);
-  min-width: 0px;
+  min-width: 0;
 }
 
 .browser-style button.ghost:enabled:hover,
@@ -449,10 +450,11 @@ select:-moz-focusring * {
   background-image: var(--down-icon);
   background-position: center;
   background-repeat: no-repeat;
-  height: 24px;
+  background-size: 70%;
+  height: 1em;
   padding: 0;
-  width: 24px;
-  min-width: 0px !important;
+  width: 1em;
+  min-width: 0 !important;
 }
 
 /* Text input & Selects */
@@ -460,9 +462,9 @@ select:-moz-focusring * {
 .browser-style select,
 .browser-style textarea {
   border: 1px solid var(--input-border-color);
-  border-radius: 2px;
-  height: 32px;
-  padding: 0 8px;
+  border: max(1px, 0.05em) solid var(--input-border-color);
+  border-radius: 0.1em;
+  padding: 0.5em;
   width: auto;
 }
 
@@ -472,7 +474,7 @@ select:-moz-focusring * {
 .browser-style select.hover,
 .browser-style textarea:hover,
 .browser-style textarea.hover {
-  border: 1px solid var(--input-border-color-hover);
+  border-color: var(--input-border-color-hover);
 }
 
 .browser-style input:focus,
@@ -484,32 +486,33 @@ select:-moz-focusring * {
 .browser-style textarea:focus,
 .browser-style textarea.focus,
 .browser-style textarea.focused {
-  border: 1px solid var(--input-border-color-focus);
-  box-shadow: 0 0 0 1px var(--focus-color), 0 0 0 4px var(--focus-color-fade);
+  border-color: var(--input-border-color-focus);
+  box-shadow: 0 0 0 0.1em var(--focus-color), 0 0 0 0.3em var(--focus-color-fade);
 }
 
 .browser-style input.warning,
 .browser-style select.warning,
 .browser-style textarea.warning {
-  border: 1px solid var(--yellow-60);
-  box-shadow: 0 0 0 1px var(--yellow-60), 0 0 0 4px var(--yellow-60-a30);
+  border-color: var(--yellow-60);
+  box-shadow: 0 0 0 0.1em var(--yellow-60), 0 0 0 0.3em var(--yellow-60-a30);
 }
 
 .browser-style input.error,
 .browser-style select.error,
 .browser-style textarea.error {
-  border: 1px solid var(--red-60);
-  box-shadow: 0 0 0 1px var(--red-60), 0 0 0 4px var(--red-60-a30);
+  border-color: var(--red-60);
+  box-shadow: 0 0 0 0.1em var(--red-60), 0 0 0 0.3em var(--red-60-a30);
 }
 
 .browser-style select {
   -moz-appearance: none;
   appearance: none;
   background-image: var(--down-icon);
-  background-position: left calc(100% - 8px) bottom 50%;
+  background-position: left calc(100% - 0.5em) bottom 50%;
+  background-size: 1em;
   background-repeat: no-repeat;
   cursor: pointer;
-  padding-right: 24px;
+  padding-right: 2em;
 }
 
 .browser-style input[type="radio"],
@@ -520,15 +523,14 @@ select:-moz-focusring * {
 /* Message bars */
 .browser-style .message-bar {
   align-items: center;
-  background-position: left 8px bottom 50%;
+  background-position: left 0.5em bottom 50%;
   background-repeat: no-repeat;
-  border-radius: 4px;
+  background-size: 1em;
+  border-radius: 0.25em;
   box-sizing: border-box;
   display: flex;
-  font-size: 16px;
-  margin: 5px 0;
-  min-height: 32px;
-  padding: 5px 4px 5px 32px;
+  margin: 0.3em 0;
+  padding: 0.25em 0.2em 0.25em 2em;
   text-align: left;
   width: auto;
 }
@@ -560,18 +562,16 @@ select:-moz-focusring * {
 /* List/Menu */
 .browser-style .panel-section-list {
   flex-direction: column;
-  padding: 4px 0;
+  padding: 0.2em 0;
 }
 
 .browser-style .panel-list-item {
   align-items: center;
-  border-radius: 2px;
+  border-radius: 0.1em;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
-  font-size: 13px;
-  height: 24px;
-  padding: 0 16px;
+  padding: 0 0.75em;
   width: 100%;
 }
 
@@ -600,6 +600,6 @@ select:-moz-focusring * {
 }
 
 .browser-style .panel-section-list .panel-section-separator {
-  margin: 4px 0;
+  margin: 0.15em 0;
   width: 100%;
 }
