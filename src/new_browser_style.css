@@ -140,6 +140,20 @@
   --secondary-color-4: var(--grey-10-a80);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-background: rgb(28, 27, 33);
+    --container-background: rgb(35, 34, 42);
+    --text-color-fade: var(--grey-40);
+
+    --secondary-color: var(--grey-10);
+    --secondary-color-1: var(--grey-10-a10);
+    --secondary-color-2: var(--grey-10-a20);
+    --secondary-color-3: var(--grey-10-a30);
+    --secondary-color-4: var(--grey-10-a80);
+  }
+}
+
 /* Page reset */
 body {
   background: var(--container-background);
