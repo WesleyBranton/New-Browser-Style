@@ -38,6 +38,7 @@
   --grey-90-a80: rgba(12, 12, 13, 0.8);
   --grey-90-a90: rgba(12, 12, 13, 0.9);
   --blue-40: rgb(69, 161, 255);
+  --blue-40-a30: rgb(69, 161, 255, 0.3);
   --blue-50: rgb(10, 132, 255);
   --blue-50-a10: rgba(10, 132, 255, 0.1);
   --blue-50-a20: rgba(10, 132, 255, 0.2);
@@ -76,12 +77,6 @@
   --text-color: var(--secondary-color);
   --border-color: var(--secondary-color-3);
   --container-shadow: var(--grey-90-a10);
-
-  --primary-color-1: var(--blue-50);
-  --primary-color-1-fade: var(--blue-50-a30);
-  --primary-color-2: var(--blue-60);
-  --primary-color-3: var(--blue-70);
-  --primary-color-4: var(--blue-80);
 
   --tab-button-border: var(--secondary-color-2);
   --tab-button-color-selected: var(--primary-color-2);
@@ -122,11 +117,19 @@
   --container-background: white;
   --text-color-fade: var(--grey-60);
 
+  --primary-color-1: var(--blue-50);
+  --primary-color-1-fade: var(--blue-50-a30);
+  --primary-color-2: var(--blue-60);
+  --primary-color-3: var(--blue-70);
+  --primary-color-4: var(--blue-80);
+
   --secondary-color: var(--grey-90);
   --secondary-color-1: var(--grey-90-a10);
   --secondary-color-2: var(--grey-90-a20);
   --secondary-color-3: var(--grey-90-a30);
   --secondary-color-4: var(--grey-90-a80);
+
+  --input-background: white;
 }
 
 :root.browser-style-dark {
@@ -136,11 +139,19 @@
   --container-background: rgb(35, 34, 42);
   --text-color-fade: var(--grey-40);
 
+  --primary-color-1: var(--blue-40);
+  --primary-color-1-fade: var(--blue-40-a30);
+  --primary-color-2: var(--blue-50);
+  --primary-color-3: var(--blue-60);
+  --primary-color-4: var(--blue-70);
+
   --secondary-color: var(--grey-10);
   --secondary-color-1: var(--grey-10-a10);
   --secondary-color-2: var(--grey-10-a20);
   --secondary-color-3: var(--grey-10-a30);
   --secondary-color-4: var(--grey-10-a80);
+
+  --input-background: var(--secondary-color-1);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -151,11 +162,19 @@
     --container-background: rgb(35, 34, 42);
     --text-color-fade: var(--grey-40);
 
+    --primary-color-1: var(--blue-40);
+    --primary-color-1-fade: var(--blue-40-a30);
+    --primary-color-2: var(--blue-50);
+    --primary-color-3: var(--blue-60);
+    --primary-color-4: var(--blue-70);
+
     --secondary-color: var(--grey-10);
     --secondary-color-1: var(--grey-10-a10);
     --secondary-color-2: var(--grey-10-a20);
     --secondary-color-3: var(--grey-10-a30);
     --secondary-color-4: var(--grey-10-a80);
+
+    --input-background: var(--secondary-color-1);
   }
 }
 
@@ -338,7 +357,7 @@ select:-moz-focusring * {
 
 /* Links */
 .browser-style a {
-  color: var(--blue-60);
+  color: var(--primary-color-1);
   text-decoration: none;
 }
 
@@ -350,7 +369,7 @@ select:-moz-focusring * {
 .browser-style a:active,
 .browser-style a.active,
 .browser-style a.pressed {
-  color: var(--blue-70);
+  color: var(--primary-color-3);
 }
 
 .browser-style a:visited,
@@ -486,6 +505,8 @@ select:-moz-focusring * {
   padding: 0.5em;
   width: auto;
   font-size: 1rem;
+  background: var(--input-background);
+  color: var(--text-color);
 }
 
 .browser-style input:hover,
@@ -533,6 +554,10 @@ select:-moz-focusring * {
   background-repeat: no-repeat;
   cursor: pointer;
   padding-right: 2em;
+}
+
+.browser-style option {
+  color: black;
 }
 
 .browser-style input[type="radio"],
