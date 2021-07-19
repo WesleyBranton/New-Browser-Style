@@ -6,9 +6,8 @@ The goal of this project is to provide an updated version of the default browser
 This stylesheet is designed to be a replacement for the built-in Firefox browser style. Using these styles requires similar HTML code to the default browser styles.
 
 ## Documentation
-- [Using this library](setup.md)
-- [Component Documentation](components.md)
-- [Component Showcase](example.html)
+- [Using this library](https://github.com/WesleyBranton/New-Browser-Style/blob/master/docs/setup.md)
+- [Component Documentation](https://github.com/WesleyBranton/New-Browser-Style/blob/master/docs/components.md)
 
 ## Contributing
 ### Making A Donation

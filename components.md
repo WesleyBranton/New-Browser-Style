@@ -20,7 +20,7 @@ Some code snippets may contain placeholders. These are surrounded with % charact
 > - [Links](#links)
 
 ## Theme
-This library supports both light and dark mode. The theme class **MUST** be set on the HTML element of the document. Light mode will be used as the default theme if no theme class is set.
+This library supports both light and dark mode. The theme class **MUST** be set on the HTML element of the document. If no theme is set, the theme will automatically be applied based on whether the user's browser has requested the light mode or dark mode version using the `prefers-color-scheme` media query.
 
 #### Themes
 <table>
@@ -30,9 +30,9 @@ This library supports both light and dark mode. The theme class **MUST** be set 
         <th>Version</th>
     </tr>
     <tr>
-        <td>Light</td>
+        <td>Automatic</td>
         <td>None</td>
-        <td>1.0+</td>
+        <td>2.0+</td>
     </tr>
     <tr>
         <td>Light</td>

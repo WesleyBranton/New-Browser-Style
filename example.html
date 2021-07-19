@@ -12,7 +12,24 @@
          .documentation {
            font-weight: normal !important;
          }
+
+         #darkModeToggle {
+           position: fixed;
+           bottom: 1em;
+           right: 1em;
+         }
        </style>
+       <script>
+         function toggleDarkMode() {
+           if (document.documentElement.classList.contains('browser-style-light')) {
+            document.documentElement.classList.remove('browser-style-light');
+            document.documentElement.classList.add('browser-style-dark');
+           } else {
+            document.documentElement.classList.remove('browser-style-dark');
+            document.documentElement.classList.add('browser-style-light');
+           }
+         }
+       </script>
      </head>
      <body class="browser-style browser-style-page">
        <div class="browser-style-container">
@@ -131,8 +148,8 @@
          <button class="expander"></button>
          <button class="default">Normal</button>
          <button class="default puffy">Puffy</button>
-         <button class="default">Default</button>
          <button class="secondary">Secondary</button>
+         <button class="default micro">Micro</button>
          <button class="ghost">Ghost</button>
    
          <!-- Links -->
@@ -167,5 +184,7 @@
          </select>
          
        </div>
+
+       <button id="darkModeToggle" class="default puffy" onclick="toggleDarkMode();">Toggle Theme</button>
      </body>
    </html>
