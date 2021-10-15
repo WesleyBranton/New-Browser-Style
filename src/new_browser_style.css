@@ -319,27 +319,27 @@ select:-moz-focusring * {
     min-height: 3em;
 }
 
-.browser-style .panel-section-tabs-button:hover,
-.browser-style .panel-section-tabs-button.hover {
+.browser-style .panel-section-tabs-button:enabled:hover,
+.browser-style .panel-section-tabs-button:enabled.hover {
     background: var(--tab-button-background-hover);
     border-bottom-color: var(--tab-button-border);
 }
 
-.browser-style .panel-section-tabs-button:active,
-.browser-style .panel-section-tabs-button.active,
-.browser-style .panel-section-tabs-button.pressed {
+.browser-style .panel-section-tabs-button:enabled:active,
+.browser-style .panel-section-tabs-button:enabled.active,
+.browser-style .panel-section-tabs-button:enabled.pressed {
     background: var(--tab-button-background-active);
     border-bottom-color: var(--tab-button-border);
 }
 
-.browser-style .panel-section-tabs-button.selected:hover,
-.browser-style .panel-section-tabs-button.selected.hover {
+.browser-style .panel-section-tabs-button.selected:enabled:hover,
+.browser-style .panel-section-tabs-button.selected:enabled.hover {
     background: var(--tab-button-background-hover);
 }
 
-.browser-style .panel-section-tabs-button.selected:active,
-.browser-style .panel-section-tabs-button.selected.active,
-.browser-style .panel-section-tabs-button.selected.pressed {
+.browser-style .panel-section-tabs-button.selected:enabled:active,
+.browser-style .panel-section-tabs-button.selected:enabled.active,
+.browser-style .panel-section-tabs-button.selected:enabled.pressed {
     background: var(--tab-button-background-active);
 }
 
@@ -485,6 +485,7 @@ select:-moz-focusring * {
 }
 
 .browser-style button.expander {
+    background-color: var(--button-secondary-background);
     background-image: var(--down-icon);
     background-position: center;
     background-repeat: no-repeat;
@@ -493,6 +494,17 @@ select:-moz-focusring * {
     padding: 0;
     min-width: 0 !important;
     width: 2em;
+}
+
+.browser-style button.expander:enabled:hover,
+.browser-style button.expander:enabled.hover {
+    background-color: var(--button-secondary-background-hover);
+}
+
+.browser-style button.expander:enabled:active,
+.browser-style button.expander:enabled.active,
+.browser-style button.expander:enabled.pressed {
+    background-color: var(--button-secondary-background-active);
 }
 
 /* Text input & Selects */
@@ -509,12 +521,19 @@ select:-moz-focusring * {
     width: auto;
 }
 
-.browser-style input:hover,
-.browser-style input.hover,
-.browser-style select:hover,
-.browser-style select.hover,
-.browser-style textarea:hover,
-.browser-style textarea.hover {
+.browser-style input:disabled,
+.browser-style select:disabled,
+.browser-style textarea:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+
+.browser-style input:enabled:hover,
+.browser-style input:enabled.hover,
+.browser-style select:enabled:hover,
+.browser-style select:enabled.hover,
+.browser-style textarea:enabled:hover,
+.browser-style textarea:enabled.hover {
     border-color: var(--input-border-color-hover);
 }
 
@@ -560,8 +579,13 @@ select:-moz-focusring * {
     color: black;
 }
 
-.browser-style input[type="radio"],
-.browser-style input[type="checkbox"] {
+.browser-style input[type="radio"]:enabled,
+.browser-style input[type="checkbox"]:enabled {
+    cursor: pointer;
+}
+
+/* Labels */
+.browser-style.clickable-labels label[for]:not(.not-clickable) {
     cursor: pointer;
 }
 
