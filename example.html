@@ -11,16 +11,39 @@
     <link rel="stylesheet" href="src/new_browser_style.css">
 
     <style>
-        .documentation {
+        .no-documentation {
+            opacity: 0.2;
+            cursor: not-allowed;
+        }
+
+        .documentation,
+        .no-documentation {
             font-weight: normal !important;
+        }
+
+        .no-documentation img,
+        .documentation img {
+            width: 0.8em;
         }
 
         #darkModeToggle {
             position: fixed;
             bottom: 1em;
             right: 1em;
+            border-radius: 1000px;
+            width: 4em;
+            height: 4em;
+            min-width: unset;
         }
 
+        #darkModeToggle > img {
+            width: 100%;
+        }
+
+        .browser-style-dark #darkModeToggle > img#icon-dark,
+        .browser-style-light #darkModeToggle > img#icon-light {
+            display: none !important;
+        }
     </style>
     
     <script>
@@ -41,7 +64,13 @@
     <div class="browser-style-container">
 
         <!-- Section -->
-        <h1>Section <span class="documentation">(<a href="components.html#regular-section" target="_blank" class="internal">Documentation</a>)</span></h1>
+        <h1>Section
+            <span class="documentation">
+                <a href="components.html#regular-section" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
         <div class="panel-section">
             <label>Test Link</label>
             <div>
@@ -50,7 +79,13 @@
         </div>
 
         <!-- Section with description -->
-        <h1>Section With Descriptive Text <span class="documentation">(<a href="components.html#section-with-description" target="_blank" class="internal">Documentation</a>)</span></h1>
+        <h1>Section With Descriptive Text
+            <span class="documentation">
+                <a href="components.html#section-with-description" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
         <div class="panel-section has-help">
             <label>Test Link</label>
             <div>
@@ -62,27 +97,51 @@
         </div>
 
         <!-- Section Note -->
-        <h1>Section Note <span class="documentation">(<a href="components.html#section-note" target="_blank" class="internal">Documentation</a>)</span></h1>
+        <h1>Section Note
+            <span class="documentation">
+                <a href="components.html#section-note" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
         <div class="panel-section note">
             This is a section note
         </div>
 
         <!-- Header -->
-        <h1>Header <span class="documentation">(<a href="components.html#header" target="_blank" class="internal">Documentation</a>)</span></h1>
+        <h1>Header
+            <span class="documentation">
+                <a href="components.html#header" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
         <header class="panel-section panel-section-header">
             <img class="icon-section-header" src="">
             <h1 class="text-section-header">Header</h1>
         </header>
 
         <!-- Footer -->
-        <h1>Footer <span class="documentation">(<a href="components.html#footer" target="_blank" class="internal">Documentation</a>)</span></h1>
+        <h1>Footer
+            <span class="documentation">
+                <a href="components.html#footer" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
         <footer class="panel-section panel-section-footer">
             <button class="default">Save</button>
             <button class="secondary">Cancel</button>
         </footer>
 
         <!-- Section Divider -->
-        <h1>Section Dividers <span class="documentation">(<a href="components.html#dividers" target="_blank" class="internal">Documentation</a>)</span></h1>
+        <h1>Section Dividers
+            <span class="documentation">
+                <a href="components.html#dividers" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
         <h3>solid</h3>
         <div class="panel-section-separator"></div>
         <h3>dashed divider</h3>
@@ -93,7 +152,13 @@
         <div class="panel-section-separator dotted"></div>
 
         <!-- Section Tabs -->
-        <h1>Section Tabs <span class="documentation">(<a href="components.html#tabs" target="_blank" class="internal">Documentation</a>)</span></h1>
+        <h1>Section Tabs
+            <span class="documentation">
+                <a href="components.html#tabs" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
         <section class="panel-section-tabs">
             <button type="button" class="panel-section-tabs-button selected">Tab</button>
             <div class="panel-section-tabs-separator"></div>
@@ -105,7 +170,13 @@
         </section>
 
         <!-- List/Menu -->
-        <h1>List/Menu <span class="documentation">(<a href="components.html#list-menu" target="_blank" class="internal">Documentation</a>)</span></h1>
+        <h1>List/Menu
+            <span class="documentation">
+                <a href="components.html#list-menu" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
         <div class="panel-section panel-section-list">
             <div class="panel-list-item">
                 <div class="icon"></div>
@@ -143,14 +214,26 @@
         </div>
 
         <!-- Message Bars -->
-        <h1>Message Bars <span class="documentation">(<a href="components.html#message-bars" target="_blank" class="internal">Documentation</a>)</span></h1>
+        <h1>Message Bars
+            <span class="documentation">
+                <a href="components.html#message-bars" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
         <div class="message-bar general">General message bar</div>
         <div class="message-bar success">Success message bar</div>
         <div class="message-bar warning">Warning message bar</div>
         <div class="message-bar error">Error message bar</div>
 
         <!-- Buttons -->
-        <h1>Buttons <span class="documentation">(<a href="components.html#buttons" target="_blank" class="internal">Documentation</a>)</span></h1>
+        <h1>Buttons
+            <span class="documentation">
+                <a href="components.html#buttons" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
         <button class="expander"></button>
         <button class="default">Normal</button>
         <button class="default puffy">Puffy</button>
@@ -159,31 +242,57 @@
         <button class="ghost">Ghost</button>
 
         <!-- Links -->
-        <h1>Links <span class="documentation">(<a href="components.html#links" target="_blank" class="internal">Documentation</a>)</span></h1>
+        <h1>Links
+            <span class="documentation">
+                <a href="components.html#links" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
         <a href="#" class="internal">Internal Link</a><br>
         <a href="#" class="external">External Link</a>
 
         <!-- Radio Buttons -->
-        <h1>Radio Buttons <span class="documentation">(No Special Documentation)</span></h1>
+        <h1>Radio Buttons
+            <span class="no-documentation" title="No documentation available">
+                <img src="src/icons/help.svg" alt="Help">
+            </span>
+        </h1>
         <input id="radio-1" name="example-radio" type="radio"><label for="radio-1">Option #1</label>
         <input id="radio-2" name="example-radio" type="radio"><label for="radio-2">Option #2</label>
         <input id="radio-3" name="example-radio" type="radio"><label for="radio-3">Option #3</label>
         <input id="radio-4" name="example-radio" type="radio"><label for="radio-4">Option #4</label>
 
         <!-- Checkbox -->
-        <h1>Checkbox <span class="documentation">(No Special Documentation)</span></h1>
+        <h1>Checkbox
+            <span class="no-documentation" title="No documentation available">
+                <img src="src/icons/help.svg" alt="Help">
+            </span>
+        </h1>
         <input id="checkbox-1" name="example-checkbox" type="checkbox"><label for="checkbox-1">Click me!</label>
 
         <!-- Text Input -->
-        <h1>Text Input <span class="documentation">(No Special Documentation)</span></h1>
+        <h1>Text Input
+            <span class="no-documentation" title="No documentation available">
+                <img src="src/icons/help.svg" alt="Help">
+            </span>
+        </h1>
         <input type="text" placeholder="Text goes here..."></input>
 
         <!-- Text Area -->
-        <h1>Text Area <span class="documentation">(No Special Documentation)</span></h1>
+        <h1>Text Area
+            <span class="no-documentation" title="No documentation available">
+                <img src="src/icons/help.svg" alt="Help">
+            </span>
+        </h1>
         <textarea placeholder="Put text here..."></textarea>
 
         <!-- Select -->
-        <h1>Select <span class="documentation">(No Special Documentation)</span></h1>
+        <h1>Select
+            <span class="no-documentation" title="No documentation available">
+                <img src="src/icons/help.svg" alt="Help">
+            </span>
+        </h1>
         <select>
             <option>Option 1</option>
             <option>Option 2</option>
@@ -191,7 +300,10 @@
 
     </div>
 
-    <button id="darkModeToggle" class="default puffy" onclick="toggleDarkMode();">Toggle Theme</button>
+    <button id="darkModeToggle" class="default" onclick="toggleDarkMode();" title="Toggle dark/light mode">
+        <img id="icon-dark" src="src/icons/dark.svg">
+        <img id="icon-light" src="src/icons/light.svg">
+    </button>
 </body>
 
 </html>
