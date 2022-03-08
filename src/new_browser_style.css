@@ -516,6 +516,60 @@ select:-moz-focusring * {
     background-color: var(--button-secondary-background-active);
 }
 
+/* Radio buttons */
+.browser-style .radio {
+    font-size: 1em;
+    appearance: none;
+    display: inline-block;
+    background: var(--button-secondary-background);
+    width: 1em;
+    height: 1em;
+    box-sizing: border-box;
+    border-radius: 50%;
+    position: relative;
+    border: 1px solid var(--input-border-color);
+    border: max(1px, 0.1em) solid var(--input-border-color);
+}
+
+.browser-style .radio:checked {
+    background: var(--button-primary-background);
+}
+
+.browser-style .radio:checked:before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 25%;
+    left: 25%;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background: white;
+}
+
+.browser-style .radio:enabled:active,
+.browser-style .radio:enabled:active::before,
+.browser-style .radio:enabled:hover,
+.browser-style .radio:enabled:hover::before {
+    border-color: var(--input-border-color-hover);
+}
+
+.browser-style .radio:enabled:active {
+    background: var(--button-secondary-background-active);
+}
+
+.browser-style .radio:enabled:hover {
+    background: var(--button-secondary-background-hover);
+}
+
+.browser-style .radio:enabled:checked:active {
+    background: var(--button-primary-background-active);
+}
+
+.browser-style .radio:enabled:checked:hover {
+    background: var(--button-primary-background-hover);
+}
+
 /* Switch */
 .browser-style .switch {
     font-size: 1em;
