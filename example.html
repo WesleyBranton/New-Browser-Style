@@ -44,6 +44,11 @@
         .browser-style-light #darkModeToggle > img#icon-light {
             display: none !important;
         }
+
+        .browser-style-dark .documentation img,
+        .browser-style-dark .no-documentation img {
+            filter: invert();
+        }
     </style>
     
     <script>
@@ -251,6 +256,16 @@
         </h1>
         <a href="#" class="internal">Internal Link</a><br>
         <a href="#" class="external">External Link</a>
+
+        <!-- Switch -->
+        <h1>Switches
+            <span class="documentation">
+                <a href="components.html#switches" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
+        <input id="switch-1" name="example-switch" class="switch" type="checkbox" checked><label for="switch-1">Click me!</label>
 
         <!-- Radio Buttons -->
         <h1>Radio Buttons
