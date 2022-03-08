@@ -310,6 +310,8 @@ select:-moz-focusring * {
 /* Tabs */
 .browser-style .panel-section-tabs {
     display: flex;
+    max-width: 100%;
+    overflow-y: auto;
 }
 
 .browser-style .panel-section-tabs-button {
