@@ -516,6 +516,66 @@ select:-moz-focusring * {
     background-color: var(--button-secondary-background-active);
 }
 
+/* Checkboxes */
+.browser-style .checkbox {
+    font-size: 1em;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: text-top;
+    box-sizing: border-box;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    border: 1px solid var(--input-border-color);
+    border: max(1px, 0.1em) solid var(--input-border-color);
+    background: var(--button-secondary-background);
+    border-radius: 20%;
+}
+
+.browser-style .checkbox:checked {
+    background: var(--button-primary-background);
+}
+
+.browser-style .checkbox:checked:before {
+    content: "";
+    position: absolute;
+    left: 27%;
+    top: 5%;
+    width: 25%;
+    height: 50%;
+    border: solid white !important;
+    border-width: 0 0.2em 0.2em 0 !important;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.browser-style .checkbox:enabled:active,
+.browser-style .checkbox:enabled:active::before,
+.browser-style .checkbox:enabled:hover,
+.browser-style .checkbox:enabled:hover::before {
+    border-color: var(--input-border-color-hover);
+}
+
+.browser-style .checkbox:enabled:active {
+    background: var(--button-secondary-background-active);
+}
+
+.browser-style .checkbox:enabled:hover {
+    background: var(--button-secondary-background-hover);
+}
+
+.browser-style .checkbox:enabled:checked:active {
+    background: var(--button-primary-background-active);
+}
+
+.browser-style .checkbox:enabled:checked:hover {
+    background: var(--button-primary-background-hover);
+}
+
 /* Radio buttons */
 .browser-style .radio {
     font-size: 1em;
