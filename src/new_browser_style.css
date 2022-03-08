@@ -178,6 +178,13 @@
     }
 }
 
+/* Remove animations based on user settings */
+@media (prefers-reduced-motion) {
+    .browser-style .switch::before {
+        transition: none !important;
+    }
+}
+
 /* Page reset */
 body {
     background: var(--container-background);
@@ -505,6 +512,72 @@ select:-moz-focusring * {
 .browser-style button.expander:enabled.active,
 .browser-style button.expander:enabled.pressed {
     background-color: var(--button-secondary-background-active);
+}
+
+/* Switch */
+.browser-style .switch {
+    font-size: 1em;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    width: 2em;
+    height: 1em;
+    background: var(--button-secondary-background);
+    border-radius: 1em;
+    margin-top: 0;
+    margin-bottom: 0;
+    border: 1px solid var(--input-border-color);
+    border: max(1px, 0.1em) solid var(--input-border-color);
+}
+
+.browser-style .switch::before {
+    position: absolute;
+    content: "";
+    height: 80%;
+    width: 35%;
+    top: 10%;
+    left: 10%;
+    box-sizing: border-box;
+    background: white;
+    transition: ease 0.25s left;
+    border-radius: 50%;
+    border: 1px solid var(--input-border-color);
+    border: max(1px, 0.1em) solid var(--input-border-color);
+}
+
+.browser-style .switch:checked::before {
+    left: 55%;
+}
+
+.browser-style .switch:enabled:active,
+.browser-style .switch:enabled:active::before,
+.browser-style .switch:enabled:hover,
+.browser-style .switch:enabled:hover::before {
+    border-color: var(--input-border-color-hover);
+}
+
+.browser-style .switch:enabled:active {
+    background: var(--button-secondary-background-active);
+}
+
+.browser-style .switch:enabled:hover {
+    background: var(--button-secondary-background-hover);
+}
+
+.browser-style .switch:checked {
+    background: var(--button-primary-background);
+}
+
+.browser-style .switch:enabled:checked:active {
+    background: var(--button-primary-background-active);
+}
+
+.browser-style .switch:enabled:checked:hover {
+    background: var(--button-primary-background-hover);
+}
+
+.browser-style .switch.no-animate::before {
+    transition: none !important;
 }
 
 /* Text input & Selects */

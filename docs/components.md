@@ -18,6 +18,7 @@ Some code snippets may contain placeholders. These are surrounded with % charact
 > - [Message bars](#message-bars)
 > - [Buttons](#buttons)
 > - [Links](#links)
+> - [Switches](#switches)
 
 ## Theme
 This library supports both light and dark mode. The theme class **MUST** be set on the HTML element of the document. If no theme is set, the theme will automatically be applied based on whether the user's browser has requested the light mode or dark mode version using the `prefers-color-scheme` media query.
@@ -433,7 +434,7 @@ Links are automatically detected as external if the URL attached to them include
 
 Classes are provided to allow developers to manually specify the link type. It's highly recommended that developers include the link type class to ensure that links are not incorrectly marked by the automatic detection. These classes always override automatic detection, so they can be used to fix incorrectly marked links. But these classes should **NOT** used to mislead users into thinking that they are clicking an internal link that's actually external or vice versa.
 
-#### Type
+#### Types
 <table>
     <tr>
         <th>Type</th>
@@ -468,4 +469,38 @@ Classes are provided to allow developers to manually specify the link type. It's
 <a href="https://mozilla.org">Auto detect (is external)</a>
 <a href="/about" class="internal">Internal</a>
 <a href="https://mozilla.org" class="external">External</a>
+```
+
+## Switches
+Switches are a widely accepted alternative to checkboxes, especially when working on mobile platforms. This library allows developers to easily replace a checkbox with a switch by adding the required class to the HTML checkbox element.
+
+By default, turning a switch on or off will show an animation. However, this animation can be disabled by using a class. To ensure that the switch complies with criterion 2.3.3 of Web Content Accessibility Guidelines, this animation is automatically disabled if the user has animations disabled in their settings.
+
+#### Animations
+<table>
+    <tr>
+        <th>Animation</th>
+        <th>Class</th>
+        <th>Version</th>
+    </tr>
+    <tr>
+        <td>Default</td>
+        <td>None</td>
+        <td>2.1+</td>
+    </tr>
+    <tr>
+        <td>None</td>
+        <td><code>no-animate</code></td>
+        <td>2.1+</td>
+    </tr>
+</table>
+
+#### Code
+```html
+<input class="switch %ANIMATION%" type="checkbox">
+```
+
+#### Example
+```html
+<input class="switch" type="checkbox">
 ```
