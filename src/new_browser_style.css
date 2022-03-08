@@ -519,6 +519,7 @@ select:-moz-focusring * {
 /* Radio buttons */
 .browser-style .radio {
     font-size: 1em;
+    -moz-appearance: none;
     appearance: none;
     display: inline-block;
     background: var(--button-secondary-background);
