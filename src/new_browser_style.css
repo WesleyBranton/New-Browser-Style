@@ -590,6 +590,9 @@ select:-moz-focusring * {
     position: relative;
     border: 1px solid var(--input-border-color);
     border: max(1px, 0.1em) solid var(--input-border-color);
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: text-top;
 }
 
 .browser-style .radio:checked {
@@ -645,6 +648,7 @@ select:-moz-focusring * {
     margin-bottom: 0;
     border: 1px solid var(--input-border-color);
     border: max(1px, 0.1em) solid var(--input-border-color);
+    vertical-align: text-top;
 }
 
 .browser-style .switch::before {
