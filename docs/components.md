@@ -18,6 +18,7 @@ Some code snippets may contain placeholders. These are surrounded with % charact
 > - [Message bars](#message-bars)
 > - [Buttons](#buttons)
 > - [Links](#links)
+> - [Checkboxes](#checkboxes)
 > - [Radio Buttons](#radio-buttons)
 > - [Switches](#switches)
 
@@ -470,6 +471,35 @@ Classes are provided to allow developers to manually specify the link type. It's
 <a href="https://mozilla.org">Auto detect (is external)</a>
 <a href="/about" class="internal">Internal</a>
 <a href="https://mozilla.org" class="external">External</a>
+```
+
+## Checkboxes
+When using this library, you can choose to have the checkbox style match the rest of the elements on the page. To do this, simply add the "checkbox" class to the element.
+
+There are currently no additional options to provide for this component.
+
+#### Types
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Class</th>
+        <th>Version</th>
+    </tr>
+    <tr>
+        <td>Default</td>
+        <td>None</td>
+        <td>2.1+</td>
+    </tr>
+</table>
+
+#### Code
+```html
+<input class="checkbox" type="checkbox">
+```
+
+#### Example
+```html
+<input class="checkbox" type="checkbox">
 ```
 
 ## Radio Buttons
