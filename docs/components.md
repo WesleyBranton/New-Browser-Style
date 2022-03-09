@@ -23,6 +23,8 @@ Some code snippets may contain placeholders. These are surrounded with % charact
 > - [Radio Buttons](#radio-buttons)
 > - [Switches](#switches)
 > - [Dialogs](#dialogs)
+> - [Progress Bar](#progress-bar)
+> - [Progress Wheel](#progress-wheel)
 
 ## Theme
 This library supports both light and dark mode. The theme class **MUST** be set on the HTML element of the document. If no theme is set, the theme will automatically be applied based on whether the user's browser has requested the light mode or dark mode version using the `prefers-color-scheme` media query.
@@ -704,4 +706,90 @@ By default, the dialog will take up 80% of the user's viewport width at a maximu
         </section>
     </div>
 </div>
+```
+
+## Progress Bar
+Progress bars can be used to indicate when something is loading or in cases where you need to display progress to the user. For example, when a page is loading or at the bottom of a form with multiple pages.
+
+This library includes two types of progress bars: Percentage or infinite.
+
+To adjust the percentage of a loading bar, update the CSS `width` of the `progress-bar-percentage` element. When using an infinite progress bar, the `progress-bar-percentage` element is not required.
+
+The progress bar can also be anchored to the top of the page by providing the special class.
+
+#### Types
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Class</th>
+        <th>Version</th>
+    </tr>
+    <tr>
+        <td>Default</td>
+        <td>None</td>
+        <td>2.1+</td>
+    </tr>
+    <tr>
+        <td>Infinite</td>
+        <td><code>infinite</code></td>
+        <td>2.1+</td>
+    </tr>
+</table>
+
+#### Special
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Class</th>
+        <th>Version</th>
+    </tr>
+    <tr>
+        <td>Anchor to top of page</td>
+        <td><code>fixed-top</code></td>
+        <td>2.1+</td>
+    </tr>
+</table>
+
+#### Code
+```html
+<div class="progress-bar %TYPE% %SPECIAL%">
+    <div class="progress-bar-percentage"></div>
+</div>
+```
+
+#### Example
+```html
+<div class="progress-bar">
+    <div class="progress-bar-percentage" style="width: 50%;"></div>
+</div>
+```
+
+## Progress Wheel
+A progress wheel is a spinning loading wheel that can be used to display when something is loading. The library only currently supports an infinite progress wheel.
+
+> **IMPORTANT:**
+> The `infinite` class is required.
+
+#### Animations
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Class</th>
+        <th>Version</th>
+    </tr>
+    <tr>
+        <td>Infinite</td>
+        <td><code>infinite</code></td>
+        <td>2.1+</td>
+    </tr>
+</table>
+
+#### Code
+```html
+<div class="progress-wheel %TYPE%"></div>
+```
+
+#### Example
+```html
+<div class="progress-wheel infinite"></div>
 ```
