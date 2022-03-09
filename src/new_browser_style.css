@@ -967,3 +967,93 @@ select:-moz-focusring * {
     margin: 1em;
     text-align: right;
 }
+
+/* Progress Bar */
+.browser-style .progress-bar {
+    height: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--input-border-color);
+    border: max(1px, 0.1em) solid var(--input-border-color);
+    background: var(--button-secondary-background);
+    border-radius: 0.5em;
+}
+
+.browser-style .progress-bar .progress-bar-percentage,
+.browser-style .progress-bar.infinite::before,
+.browser-style .progress-bar.infinite::after {
+    content: "";
+    position: absolute;
+    background: var(--button-primary-background);
+    height: 100%;
+    border-radius: 10000px;
+}
+
+.browser-style .progress-bar.infinite::before {
+    animation: progress-bar-before-animation 2s infinite;
+}
+
+.browser-style .progress-bar.infinite::after {
+    animation: progress-bar-after-animation 2s 0.5s infinite;
+}
+
+.browser-style .progress-bar.fixed-top {
+    border: none;
+    border-radius: 0;
+    height: 0.3em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: none;
+    z-index: 1000;
+}
+
+.browser-style .progress-bar.infinite.fixed-top::before,
+.browser-style .progress-bar.infinite.fixed-top::after {
+    border-radius: 0;
+}
+
+@keyframes progress-bar-before-animation {
+    from {
+        left: -5%;
+        width: 5%;
+    }
+    to {
+        left: 130%;
+        width: 100%;
+    }
+}
+
+@keyframes progress-bar-after-animation {
+    from {
+        left: -80%;
+        width: 80%;
+    }
+    to {
+        left: 110%;
+        width: 10%;
+    }
+}
+
+/* Progress Wheel */
+.browser-style .progress-wheel.infinite {
+    font-size: 3em;
+    width: 1em;
+    height: 1em;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 0.1em solid var(--button-secondary-background);
+    border-top-color: var(--button-primary-background);
+    animation: progress-wheel-spin 1s linear infinite;
+}
+
+@keyframes progress-wheel-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
