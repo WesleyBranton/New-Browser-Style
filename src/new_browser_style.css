@@ -180,7 +180,9 @@
 
 /* Remove animations based on user settings */
 @media (prefers-reduced-motion) {
-    .browser-style .switch::before {
+    .browser-style .switch::before,
+    .browser-style .panel-collapsible-header::after,
+    .browser-style .panel-collapsible-header::before {
         transition: none !important;
     }
 }
@@ -272,6 +274,51 @@ select:-moz-focusring * {
 .browser-style .help-row {
     color: var(--text-color-fade);
     padding: 0.25em 1.15rem 1em 1.15rem;
+}
+
+/* Collapsible Panel */
+.browser-style .panel-collapsible-header {
+    background: none;
+}
+
+.browser-style .panel-collapsible-header > * {
+    text-align: left;
+}
+
+.browser-style .panel-collapsible-header.icon-right::after,
+.browser-style .panel-collapsible-header.icon-left::before {
+    content: "";
+    background-image: var(--down-icon);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 1em;
+    width: 1em;
+    transition: 0.2s ease transform;
+}
+
+.browser-style .panel-collapsible-header::before {
+    margin-right: 0.5em;
+}
+
+.browser-style .panel-collapsible-header[data-state=close]::after {
+    transform: rotate(90deg);
+}
+
+.browser-style .panel-collapsible-header[data-state=open]::after {
+    transform: rotate(0deg);
+}
+
+.browser-style .panel-collapsible-header[data-state=close]::before {
+    transform: rotate(270deg);
+}
+
+.browser-style .panel-collapsible-header[data-state=open]::before {
+    transform: rotate(360deg);
+}
+
+.browser-style .panel-collapsible[data-state=close] {
+    display: none !important;
 }
 
 /* Special section */
