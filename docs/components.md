@@ -21,6 +21,7 @@ Some code snippets may contain placeholders. These are surrounded with % charact
 > - [Checkboxes](#checkboxes)
 > - [Radio Buttons](#radio-buttons)
 > - [Switches](#switches)
+> - [Dialogs](#dialogs)
 
 ## Theme
 This library supports both light and dark mode. The theme class **MUST** be set on the HTML element of the document. If no theme is set, the theme will automatically be applied based on whether the user's browser has requested the light mode or dark mode version using the `prefers-color-scheme` media query.
@@ -563,4 +564,68 @@ By default, turning a switch on or off will show an animation. However, this ani
 #### Example
 ```html
 <input class="switch" type="checkbox">
+```
+
+## Dialogs
+A dialog (sometimes called a popup or modal) includes content that is only visible to the user under certain situations. When the dialog is open, it appears above all other content on the page.
+
+Dialogs can contain any content that would otherwise be visible on the page, including sections. By default, the content of a dialog can take up 60% of the user's viewport height. If the content exceeds that size, the content within the dialog will become scrollable. This can be adjusted using CSS by setting the `max-height` of the `dialog-content` element.
+
+By default, the dialog will take up 80% of the user's viewport width at a maximum of 600px. The width and maximum width of the dialog can be adjusted using CSS by setting the `width` and `max-width` respectively of the `dialog-container` element.
+
+> **TIP:**
+> To ensure that your website works properly for users that depend on keyboard navigation, it's recommended that you set the `tab-index` values of all content that is not in the dialog to `-1`. This will limit keyboard navigation to only what's in the dialog. Failing to do this will make it possible for the user to focus and edit fields that are not included in the dialog.
+
+#### States
+<table>
+    <tr>
+        <th>State</th>
+        <th>Value</th>
+        <th>Version</th>
+    </tr>
+    <tr>
+        <td>Hidden</td>
+        <td><code>close</code></td>
+        <td>2.1+</td>
+    </tr>
+    <tr>
+        <td>Visible</td>
+        <td><code>open</code></td>
+        <td>2.1+</td>
+    </tr>
+</table>
+
+#### Code
+```html
+<div class="dialog" data-state="%STATE%">
+    <div class="dialog-container">
+        <section class="dialog-header">
+            %HEADER_CONTENT%
+        </section>
+        <section class="dialog-content">
+            %CONTENT%
+        </section>
+        <section class="dialog-footer">
+            %FOOTER_CONTENT%
+        </section>
+    </div>
+</div>
+```
+
+#### Example
+```html
+<div class="dialog" data-state="close">
+    <div class="dialog-container">
+        <section class="dialog-header">
+            Title Here
+        </section>
+        <section class="dialog-content">
+            Content Here
+        </section>
+        <section class="dialog-footer">
+            <button class="default">Ok</button>
+            <button class="secondary">Cancel</button>
+        </section>
+    </div>
+</div>
 ```

@@ -870,3 +870,53 @@ select:-moz-focusring * {
     margin: 0.15em 0;
     width: 100%;
 }
+
+/* Dialog */
+.browser-style .dialog[data-state=close] {
+    display: none !important;
+}
+
+.browser-style .dialog[data-state=open] {
+    background: var(--button-secondary-background-active);
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    z-index: 255;
+}
+
+.browser-style .dialog-container {
+    background: var(--container-background);
+    margin: auto;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 0.25rem;
+    border: 1px solid var(--input-border-color);
+    border: max(1px, 0.1em) solid var(--input-border-color);
+    box-shadow: 0 0 1em var(--input-border-color-hover);
+}
+
+.browser-style .dialog-container .dialog-header {
+    padding: 0.5em 1em;
+    border-bottom: 1px solid var(--input-border-color);
+    border-bottom: max(1px, 0.1em) solid var(--input-border-color);
+    text-align: center;
+    font-weight: bold;
+}
+
+.browser-style .dialog-container .dialog-content {
+    margin: 1em;
+    box-sizing: border-box;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.browser-style .dialog-container .dialog-footer {
+    margin: 1em;
+    text-align: right;
+}
