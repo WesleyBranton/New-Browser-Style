@@ -9,6 +9,7 @@ Some code snippets may contain placeholders. These are surrounded with % charact
 > - [Sections](#sections)
 >   - [Regular section](#regular-section)
 >   - [Section with description](#section-with-description)
+>   - [Collapsible Section](#collapsible-section)
 >   - [Section note](#section-note)
 >   - [Header](#header)
 >   - [Footer](#footer)
@@ -133,6 +134,81 @@ A section with a description consists of two sections: one is the main content a
 </div>
 <div class="panel-section help-row">
     <!-- Description --> 
+</div>
+```
+
+## Collapsible Section
+A collapsible section can be hidden by the user and is a great place for storing advanced options on a settings page. You can create your own button to toggle the collapsible panel instead of using the provided `panel-collapsible-header` element.
+
+> **IMPORTANT:**
+> When toggling a collapsible section, make sure to set the `data-state` attribute on both the `panel-collapsible` and `panel-collapsible-header` elements.
+
+> **TIP:**
+> Including a `data-target` attribute on your collapsible panel header that matches the `id` attribute of your collapsible panel will make it easy to toggle the panel using Javascript.
+
+#### States
+<table>
+    <tr>
+        <th>State</th>
+        <th>Value</th>
+        <th>Version</th>
+    </tr>
+    <tr>
+        <td>Collapsed</td>
+        <td><code>close</code></td>
+        <td>2.1+</td>
+    </tr>
+    <tr>
+        <td>Open</td>
+        <td><code>open</code></td>
+        <td>2.1+</td>
+    </tr>
+</table>
+
+#### Icons
+<table>
+    <tr>
+        <th>Icon</th>
+        <th>Class</th>
+        <th>Version</th>
+    </tr>
+    <tr>
+        <td>No icon</td>
+        <td>None</td>
+        <td>2.1+</td>
+    </tr>
+    <tr>
+        <td>Icon on left</td>
+        <td><code>icon-left</code></td>
+        <td>2.1+</td>
+    </tr>
+    <tr>
+        <td>Icon on right</td>
+        <td><code>icon-right</code></td>
+        <td>2.1+</td>
+    </tr>
+</table>
+
+#### Code
+```html
+<button class="panel-section panel-collapsible-header %ICON%" data-state="%STATE%">
+    <!-- Title -->
+</button>
+<div class="panel-collapsible" data-state="%STATE%">
+    <!-- Content -->
+</div>
+```
+
+#### Example
+```html
+<button class="panel-section panel-collapsible-header icon-right" data-state="close" data-target="collapsible1">
+    <span>Advanced Setting</span>
+</button>
+<div id="collapsible1" class="panel-collapsible" data-state="close">
+    <div class="panel-section">
+        <label>Erase your current settings</label>
+        <button class="secondary">Restore To Default</button>
+    </div>
 </div>
 ```
 

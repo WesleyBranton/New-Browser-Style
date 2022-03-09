@@ -72,6 +72,14 @@
                 dialog.dataset.state = 'close';
             }
         }
+
+        function togglePanel(button) {
+            const panel = document.getElementById(button.dataset.target);
+            const newState = (button.dataset.state == 'open') ? 'close' : 'open';
+
+            panel.dataset.state = newState;
+            button.dataset.state = newState;
+        }
     </script>
 </head>
 
@@ -109,6 +117,26 @@
         </div>
         <div class="panel-section help-row">
             Descriptive text
+        </div>
+
+        <!-- Collapsible Section -->
+        <h1>Collapsible Section
+            <span class="documentation">
+                <a href="components.html#collapsible-section" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
+        <button class="panel-section panel-collapsible-header icon-left" data-state="close" data-target="collapsible1" onclick="togglePanel(this);">
+            <span>Click here to see panel</span>
+        </button>
+        <div id="collapsible1" class="panel-collapsible" data-state="close">
+            <div class="panel-section">
+                <label>Test Link</label>
+                <div>
+                    <a href="https://mozilla.org" target="_blank">External Link</a>
+                </div>
+            </div>
         </div>
 
         <!-- Section Note -->
