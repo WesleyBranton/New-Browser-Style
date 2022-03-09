@@ -63,6 +63,15 @@
             }
         }
 
+        function toggleDialog(open) {
+            const dialog = document.getElementsByClassName('dialog')[0];
+
+            if (open) {
+                dialog.dataset.state = 'open';
+            } else {
+                dialog.dataset.state = 'close';
+            }
+        }
     </script>
 </head>
 
@@ -317,6 +326,35 @@
             <option>Option 1</option>
             <option>Option 2</option>
         </select>
+
+        <!-- Dialog -->
+        <h1>Dialog
+            <span class="documentation">
+                <a href="components.html#dialogs" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
+
+        <button class="default" onclick="toggleDialog(true);">Click here</button>
+
+        <div class="dialog" data-state="close">
+            <div class="dialog-container">
+                <section class="dialog-header">
+                    <div class="panel-section has-help help-row">
+                        <span>Title Here</span>
+                        <button class="secondary micro" onclick="toggleDialog(false);">X</button>
+                    </div>
+                </section>
+                <section class="dialog-content">
+                    Content Here
+                </section>
+                <section class="dialog-footer">
+                    <button class="default" onclick="toggleDialog(false);">Ok</button>
+                    <button class="secondary" onclick="toggleDialog(false);">Cancel</button>
+                </section>
+            </div>
+        </div>
 
     </div>
 
