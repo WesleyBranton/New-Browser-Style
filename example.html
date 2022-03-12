@@ -80,6 +80,32 @@
             panel.dataset.state = newState;
             button.dataset.state = newState;
         }
+
+        function togglePanelAnimated(button) {
+            const panel = document.getElementById(button.dataset.target);
+            const newState = (button.dataset.state == 'open') ? 'close' : 'open';
+
+            if (newState == 'open') {
+                panel.style.display = null;
+                panel.style.maxHeight = panel.scrollHeight + 'px';
+                setTimeout(() => {
+                    panel.dataset.state = newState;
+                    button.dataset.state = newState;
+                    setTimeout(() => {
+                        panel.style.maxHeight = null;
+                    }, 500);
+                }, 50);
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + 'px';
+                setTimeout(() => {
+                    panel.dataset.state = newState;
+                    button.dataset.state = newState;
+                    setTimeout(() => {
+                        panel.style.display = 'none';
+                    }, 500);
+                }, 50);
+            }
+        }
     </script>
 </head>
 
@@ -131,6 +157,17 @@
             <span>Click here to see panel</span>
         </button>
         <div id="collapsible1" class="panel-collapsible" data-state="close">
+            <div class="panel-section">
+                <label>Test Link</label>
+                <div>
+                    <a href="https://mozilla.org" target="_blank">External Link</a>
+                </div>
+            </div>
+        </div>
+        <button class="panel-section panel-collapsible-header icon-left" data-state="close" data-target="collapsible2" onclick="togglePanelAnimated(this);">
+            <span>Click here to see panel (Animated)</span>
+        </button>
+        <div id="collapsible2" class="panel-collapsible animated" data-state="close">
             <div class="panel-section">
                 <label>Test Link</label>
                 <div>

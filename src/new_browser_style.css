@@ -182,7 +182,8 @@
 @media (prefers-reduced-motion) {
     .browser-style .switch::before,
     .browser-style .panel-collapsible-header::after,
-    .browser-style .panel-collapsible-header::before {
+    .browser-style .panel-collapsible-header::before,
+    .browser-style .panel-collapsible.animated {
         transition: none !important;
     }
 }
@@ -317,8 +318,17 @@ select:-moz-focusring * {
     transform: rotate(360deg);
 }
 
-.browser-style .panel-collapsible[data-state=close] {
+.browser-style .panel-collapsible[data-state=close]:not(.animated) {
     display: none !important;
+}
+
+.browser-style .panel-collapsible.animated {
+    transition: ease 0.5s max-height;
+    overflow-y: hidden;
+}
+
+.browser-style .panel-collapsible.animated[data-state=close] {
+    max-height: 0 !important;
 }
 
 /* Special section */

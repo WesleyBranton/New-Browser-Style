@@ -148,6 +148,32 @@ A collapsible section can be hidden by the user and is a great place for storing
 > **TIP:**
 > Including a `data-target` attribute on your collapsible panel header that matches the `id` attribute of your collapsible panel will make it easy to toggle the panel using Javascript.
 
+#### Animation
+The collapsible panel can be animated by setting the `max-height` of the panel when the user toggles the panel to open. When animating a panel, it is recommended that you remove the `max-height` from the panel after the animation is completed. Failing to do so could cause issues if the content in the panel resizes or reflows.
+
+Additionally, it's recommended that you set the `display` property of the panel to `none` after the opening animation is completed. Failing to do so will cause issues with keyboard navigation selecting items that are within the closed panel.
+
+Animations are automatically disabled if the user has disabled animations on their system, as recommended by the WCAG standards.
+
+#### Types
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Class</th>
+        <th>Version</th>
+    </tr>
+    <tr>
+        <td>Default</td>
+        <td>None</td>
+        <td>2.1+</td>
+    </tr>
+    <tr>
+        <td>Animated</td>
+        <td><code>animated</code></td>
+        <td>2.1+</td>
+    </tr>
+</table>
+
 #### States
 <table>
     <tr>
