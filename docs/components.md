@@ -786,7 +786,7 @@ The progress bar can also be anchored to the top of the page by providing the sp
 #### Example
 ```html
 <div class="progress-bar">
-    <div class="progress-bar-percentage" style="width: 50%;"></div>
+    <div class="progress-bar-percentage"></div>
 </div>
 ```
 
