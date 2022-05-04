@@ -2,189 +2,453 @@
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at https://mozilla.org/MPL/2.0/. -->
 
-   <!DOCTYPE html>
-   <html class="browser-style-light">
-     <head>
-       <title>New Browser Style Sample</title>
-       <meta charset="utf-8">
-       <link rel="stylesheet" href="src/new_browser_style.css">
-       <style>
-         .documentation {
-           font-weight: normal !important;
-         }
+<!DOCTYPE html>
+<html class="browser-style-light">
 
-         #darkModeToggle {
-           position: fixed;
-           bottom: 1em;
-           right: 1em;
-         }
-       </style>
-       <script>
-         function toggleDarkMode() {
-           if (document.documentElement.classList.contains('browser-style-light')) {
-            document.documentElement.classList.remove('browser-style-light');
-            document.documentElement.classList.add('browser-style-dark');
-           } else {
-            document.documentElement.classList.remove('browser-style-dark');
-            document.documentElement.classList.add('browser-style-light');
-           }
-         }
-       </script>
-     </head>
-     <body class="browser-style browser-style-page">
-       <div class="browser-style-container">
-         
-         <!-- Section -->
-         <h1>Section <span class="documentation">(<a href="components.html#regular-section" target="_blank" class="internal">Documentation</a>)</span></h1>
-         <div class="panel-section">
-           <label>Test Link</label>
-           <div>
-             <a href="https://mozilla.org" target="_blank">External Link</a>
-           </div>
-         </div>
-         
-         <!-- Section with description -->
-         <h1>Section With Descriptive Text <span class="documentation">(<a href="components.html#section-with-description" target="_blank" class="internal">Documentation</a>)</span></h1>
-         <div class="panel-section has-help">
-           <label>Test Link</label>
-           <div>
-             <a href="#">Internal Link</a>
-           </div>
-         </div>
-         <div class="panel-section help-row">
-           Descriptive text 
-         </div>
-   
-         <!-- Section Note -->
-         <h1>Section Note <span class="documentation">(<a href="components.html#section-note" target="_blank" class="internal">Documentation</a>)</span></h1>
-         <div class="panel-section note">
-           This is a section note
-         </div>
-   
-         <!-- Header -->
-         <h1>Header <span class="documentation">(<a href="components.html#header" target="_blank" class="internal">Documentation</a>)</span></h1>
-         <header class="panel-section panel-section-header">
-           <img class="icon-section-header" src="">
-           <h1 class="text-section-header">Header</h1>
-         </header>
-         
-         <!-- Footer -->
-         <h1>Footer <span class="documentation">(<a href="components.html#footer" target="_blank" class="internal">Documentation</a>)</span></h1>
-         <footer class="panel-section panel-section-footer">
-           <button class="default">Save</button>
-           <button class="secondary">Cancel</button>
-         </footer>
-         
-         <!-- Section Divider -->
-         <h1>Section Dividers <span class="documentation">(<a href="components.html#dividers" target="_blank" class="internal">Documentation</a>)</span></h1>
-         <h3>solid</h3>
-         <div class="panel-section-separator"></div>
-         <h3>dashed divider</h3>
-         <div class="panel-section-separator dashed"></div>
-         <h3>rounded</h3>
-         <div class="panel-section-separator rounded"></div>
-         <h3>dotted</h3>
-         <div class="panel-section-separator dotted"></div>
-         
-         <!-- Section Tabs -->
-         <h1>Section Tabs <span class="documentation">(<a href="components.html#tabs" target="_blank" class="internal">Documentation</a>)</span></h1>
-         <section class="panel-section-tabs">
-           <button type="button" class="panel-section-tabs-button selected">Tab</button>
-           <div class="panel-section-tabs-separator"></div>
-           <button type="button" class="panel-section-tabs-button">Tab</button>
-           <div class="panel-section-tabs-separator"></div>
-           <button type="button" class="panel-section-tabs-button">Tab</button>
-           <div class="panel-section-tabs-separator"></div>
-           <button type="button" class="panel-section-tabs-button">Tab</button>
-         </section>
-         
-         <!-- List/Menu -->
-         <h1>List/Menu <span class="documentation">(<a href="components.html#list-menu" target="_blank" class="internal">Documentation</a>)</span></h1>
-         <div class="panel-section panel-section-list">
-           <div class="panel-list-item">
-             <div class="icon"></div>
-             <div class="text">List Item</div>
-             <div class="text-shortcut">Ctrl-L</div>
-           </div>
-   
-           <div class="panel-list-item">
-             <div class="icon"></div>
-             <div class="text">List Item</div>
-             <div class="text-shortcut"></div>
-           </div>
-   
-           <div class="panel-section-separator"></div>
-   
-           <div class="panel-list-item disabled">
-             <div class="icon"></div>
-             <div class="text">Disabled List Item</div>
-             <div class="text-shortcut"></div>
-           </div>
-   
-           <div class="panel-section-separator"></div>
-   
-           <div class="panel-list-item">
-             <div class="icon"></div>
-             <div class="text">List Item</div>
-             <div class="text-shortcut"></div>
-           </div>
-   
-           <div class="panel-list-item">
-             <div class="icon"></div>
-             <div class="text">List Item</div>
-             <div class="text-shortcut"></div>
-           </div>
-         </div>
-         
-         <!-- Message Bars -->
-         <h1>Message Bars <span class="documentation">(<a href="components.html#message-bars" target="_blank" class="internal">Documentation</a>)</span></h1>
-         <div class="message-bar general">General message bar</div>
-         <div class="message-bar success">Success message bar</div>
-         <div class="message-bar warning">Warning message bar</div>
-         <div class="message-bar error">Error message bar</div>
-         
-         <!-- Buttons -->
-         <h1>Buttons <span class="documentation">(<a href="components.html#buttons" target="_blank" class="internal">Documentation</a>)</span></h1>
-         <button class="expander"></button>
-         <button class="default">Normal</button>
-         <button class="default puffy">Puffy</button>
-         <button class="secondary">Secondary</button>
-         <button class="default micro">Micro</button>
-         <button class="ghost">Ghost</button>
-   
-         <!-- Links -->
-         <h1>Links <span class="documentation">(<a href="components.html#links" target="_blank" class="internal">Documentation</a>)</span></h1>
-         <a href="#" class="internal">Internal Link</a><br>
-         <a href="#" class="external">External Link</a>
-   
-         <!-- Radio Buttons -->
-         <h1>Radio Buttons <span class="documentation">(No Special Documentation)</span></h1>
-         <label><input name="example-radio" type="radio"> Option #1</label>
-         <label><input name="example-radio" type="radio"> Option #2</label>
-         <label><input name="example-radio" type="radio"> Option #3</label>
-         <label><input name="example-radio" type="radio"> Option #4</label>
-         
-         <!-- Checkbox -->
-         <h1>Checkbox <span class="documentation">(No Special Documentation)</span></h1>
-         <label><input name="example-checkbox" type="checkbox"> Click me!</label>
-         
-         <!-- Text Input -->
-         <h1>Text Input <span class="documentation">(No Special Documentation)</span></h1>
-         <input type="text" placeholder="Text goes here..."></input>
-         
-         <!-- Text Area -->
-         <h1>Text Area <span class="documentation">(No Special Documentation)</span></h1>
-         <textarea placeholder="Put text here..."></textarea>
-         
-         <!-- Select -->
-         <h1>Select <span class="documentation">(No Special Documentation)</span></h1>
-         <select>
-           <option>Option 1</option>
-           <option>Option 2</option>
-         </select>
-         
-       </div>
+<head>
+    <title>New Browser Style Sample</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="src/new_browser_style.css">
 
-       <button id="darkModeToggle" class="default puffy" onclick="toggleDarkMode();">Toggle Theme</button>
-     </body>
-   </html>
+    <style>
+        .no-documentation {
+            opacity: 0.2;
+            cursor: not-allowed;
+        }
+
+        .documentation,
+        .no-documentation {
+            font-weight: normal !important;
+        }
+
+        .no-documentation img,
+        .documentation img {
+            width: 0.8em;
+        }
+
+        #darkModeToggle {
+            position: fixed;
+            bottom: 1em;
+            right: 1em;
+            border-radius: 1000px;
+            width: 4em;
+            height: 4em;
+            min-width: unset;
+        }
+
+        #darkModeToggle > img {
+            width: 100%;
+        }
+
+        .browser-style-dark #darkModeToggle > img#icon-dark,
+        .browser-style-light #darkModeToggle > img#icon-light {
+            display: none !important;
+        }
+
+        .browser-style-dark .documentation img,
+        .browser-style-dark .no-documentation img {
+            filter: invert();
+        }
+    </style>
+    
+    <script>
+        function toggleDarkMode() {
+            if (document.documentElement.classList.contains('browser-style-light')) {
+                document.documentElement.classList.remove('browser-style-light');
+                document.documentElement.classList.add('browser-style-dark');
+            } else {
+                document.documentElement.classList.remove('browser-style-dark');
+                document.documentElement.classList.add('browser-style-light');
+            }
+        }
+
+        function toggleDialog(open) {
+            const dialog = document.getElementsByClassName('dialog')[0];
+
+            if (open) {
+                dialog.dataset.state = 'open';
+            } else {
+                dialog.dataset.state = 'close';
+            }
+        }
+
+        function togglePanel(button) {
+            const panel = document.getElementById(button.dataset.target);
+            const newState = (button.dataset.state == 'open') ? 'close' : 'open';
+
+            panel.dataset.state = newState;
+            button.dataset.state = newState;
+        }
+
+        function togglePanelAnimated(button) {
+            const panel = document.getElementById(button.dataset.target);
+            const newState = (button.dataset.state == 'open') ? 'close' : 'open';
+
+            if (newState == 'open') {
+                panel.style.display = null;
+                panel.style.maxHeight = panel.scrollHeight + 'px';
+                setTimeout(() => {
+                    panel.dataset.state = newState;
+                    button.dataset.state = newState;
+                    setTimeout(() => {
+                        panel.style.maxHeight = null;
+                    }, 500);
+                }, 50);
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + 'px';
+                setTimeout(() => {
+                    panel.dataset.state = newState;
+                    button.dataset.state = newState;
+                    setTimeout(() => {
+                        panel.style.display = 'none';
+                    }, 500);
+                }, 50);
+            }
+        }
+    </script>
+</head>
+
+<body class="browser-style clickable-labels browser-style-page">
+    <div class="browser-style-container">
+
+        <!-- Section -->
+        <h1>Section
+            <span class="documentation">
+                <a href="components.html#regular-section" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
+        <div class="panel-section">
+            <label>Test Link</label>
+            <div>
+                <a href="https://mozilla.org" target="_blank">External Link</a>
+            </div>
+        </div>
+
+        <!-- Section with description -->
+        <h1>Section With Descriptive Text
+            <span class="documentation">
+                <a href="components.html#section-with-description" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
+        <div class="panel-section has-help">
+            <label>Test Link</label>
+            <div>
+                <a href="#">Internal Link</a>
+            </div>
+        </div>
+        <div class="panel-section help-row">
+            Descriptive text
+        </div>
+
+        <!-- Collapsible Section -->
+        <h1>Collapsible Section
+            <span class="documentation">
+                <a href="components.html#collapsible-section" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
+        <button class="panel-section panel-collapsible-header icon-left" data-state="close" data-target="collapsible1" onclick="togglePanel(this);">
+            <span>Click here to see panel</span>
+        </button>
+        <div id="collapsible1" class="panel-collapsible" data-state="close">
+            <div class="panel-section">
+                <label>Test Link</label>
+                <div>
+                    <a href="https://mozilla.org" target="_blank">External Link</a>
+                </div>
+            </div>
+        </div>
+        <button class="panel-section panel-collapsible-header icon-left" data-state="close" data-target="collapsible2" onclick="togglePanelAnimated(this);">
+            <span>Click here to see panel (Animated)</span>
+        </button>
+        <div id="collapsible2" class="panel-collapsible animated" data-state="close">
+            <div class="panel-section">
+                <label>Test Link</label>
+                <div>
+                    <a href="https://mozilla.org" target="_blank">External Link</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Note -->
+        <h1>Section Note
+            <span class="documentation">
+                <a href="components.html#section-note" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
+        <div class="panel-section note">
+            This is a section note
+        </div>
+
+        <!-- Header -->
+        <h1>Header
+            <span class="documentation">
+                <a href="components.html#header" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
+        <header class="panel-section panel-section-header">
+            <img class="icon-section-header" src="">
+            <h1 class="text-section-header">Header</h1>
+        </header>
+
+        <!-- Footer -->
+        <h1>Footer
+            <span class="documentation">
+                <a href="components.html#footer" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
+        <footer class="panel-section panel-section-footer">
+            <button class="default">Save</button>
+            <button class="secondary">Cancel</button>
+        </footer>
+
+        <!-- Section Divider -->
+        <h1>Section Dividers
+            <span class="documentation">
+                <a href="components.html#dividers" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
+        <h3>solid</h3>
+        <div class="panel-section-separator"></div>
+        <h3>dashed divider</h3>
+        <div class="panel-section-separator dashed"></div>
+        <h3>rounded</h3>
+        <div class="panel-section-separator rounded"></div>
+        <h3>dotted</h3>
+        <div class="panel-section-separator dotted"></div>
+
+        <!-- Section Tabs -->
+        <h1>Section Tabs
+            <span class="documentation">
+                <a href="components.html#tabs" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
+        <section class="panel-section-tabs">
+            <button type="button" class="panel-section-tabs-button selected">Tab</button>
+            <div class="panel-section-tabs-separator"></div>
+            <button type="button" class="panel-section-tabs-button">Tab</button>
+            <div class="panel-section-tabs-separator"></div>
+            <button type="button" class="panel-section-tabs-button">Tab</button>
+            <div class="panel-section-tabs-separator"></div>
+            <button type="button" class="panel-section-tabs-button">Tab</button>
+        </section>
+
+        <!-- List/Menu -->
+        <h1>List/Menu
+            <span class="documentation">
+                <a href="components.html#list-menu" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
+        <div class="panel-section panel-section-list">
+            <div class="panel-list-item">
+                <div class="icon"></div>
+                <div class="text">List Item</div>
+                <div class="text-shortcut">Ctrl-L</div>
+            </div>
+
+            <div class="panel-list-item">
+                <div class="icon"></div>
+                <div class="text">List Item</div>
+                <div class="text-shortcut"></div>
+            </div>
+
+            <div class="panel-section-separator"></div>
+
+            <div class="panel-list-item disabled">
+                <div class="icon"></div>
+                <div class="text">Disabled List Item</div>
+                <div class="text-shortcut"></div>
+            </div>
+
+            <div class="panel-section-separator"></div>
+
+            <div class="panel-list-item">
+                <div class="icon"></div>
+                <div class="text">List Item</div>
+                <div class="text-shortcut"></div>
+            </div>
+
+            <div class="panel-list-item">
+                <div class="icon"></div>
+                <div class="text">List Item</div>
+                <div class="text-shortcut"></div>
+            </div>
+        </div>
+
+        <!-- Message Bars -->
+        <h1>Message Bars
+            <span class="documentation">
+                <a href="components.html#message-bars" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
+        <div class="message-bar general">General message bar</div>
+        <div class="message-bar success">Success message bar</div>
+        <div class="message-bar warning">Warning message bar</div>
+        <div class="message-bar error">Error message bar</div>
+
+        <!-- Buttons -->
+        <h1>Buttons
+            <span class="documentation">
+                <a href="components.html#buttons" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
+        <button class="expander">&nbsp;</button>
+        <button class="default">Normal</button>
+        <button class="default puffy">Puffy</button>
+        <button class="secondary">Secondary</button>
+        <button class="default micro">Micro</button>
+        <button class="ghost">Ghost</button>
+
+        <!-- Links -->
+        <h1>Links
+            <span class="documentation">
+                <a href="components.html#links" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
+        <a href="#" class="internal">Internal Link</a><br>
+        <a href="#" class="external">External Link</a>
+
+        <!-- Switch -->
+        <h1>Switches
+            <span class="documentation">
+                <a href="components.html#switches" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
+        <input id="switch-1" name="example-switch" class="switch" type="checkbox" checked><label for="switch-1">Click me!</label>
+
+        <!-- Radio Buttons -->
+        <h1>Radio Buttons
+            <span class="documentation">
+                <a href="components.html#radio-buttons" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
+        <input id="radio-1" name="example-radio" class="radio" type="radio" checked><label for="radio-1">Option #1</label>
+        <input id="radio-2" name="example-radio" class="radio" type="radio"><label for="radio-2">Option #2</label>
+        <input id="radio-3" name="example-radio" class="radio" type="radio"><label for="radio-3">Option #3</label>
+        <input id="radio-4" name="example-radio" class="radio" type="radio"><label for="radio-4">Option #4</label>
+
+        <!-- Checkbox -->
+        <h1>Checkbox
+            <span class="documentation">
+                <a href="components.html#checkboxes" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
+        <input id="checkbox-1" name="example-checkbox" class="checkbox" type="checkbox"><label for="checkbox-1">Click me!</label>
+
+        <!-- Text Input -->
+        <h1>Text Input
+            <span class="no-documentation" title="No documentation available">
+                <img src="src/icons/help.svg" alt="Help">
+            </span>
+        </h1>
+        <input type="text" placeholder="Text goes here..."></input>
+
+        <!-- Text Area -->
+        <h1>Text Area
+            <span class="no-documentation" title="No documentation available">
+                <img src="src/icons/help.svg" alt="Help">
+            </span>
+        </h1>
+        <textarea placeholder="Put text here..."></textarea>
+
+        <!-- Select -->
+        <h1>Select
+            <span class="no-documentation" title="No documentation available">
+                <img src="src/icons/help.svg" alt="Help">
+            </span>
+        </h1>
+        <select>
+            <option>Option 1</option>
+            <option>Option 2</option>
+        </select>
+
+        <!-- Dialog -->
+        <h1>Dialog
+            <span class="documentation">
+                <a href="components.html#dialogs" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
+
+        <button class="default" onclick="toggleDialog(true);">Click here</button>
+
+        <div class="dialog" data-state="close">
+            <div class="dialog-container">
+                <section class="dialog-header">
+                    <div class="panel-section has-help help-row">
+                        <span>Title Here</span>
+                        <button class="secondary micro" onclick="toggleDialog(false);">X</button>
+                    </div>
+                </section>
+                <section class="dialog-content">
+                    Content Here
+                </section>
+                <section class="dialog-footer">
+                    <button class="default" onclick="toggleDialog(false);">Ok</button>
+                    <button class="secondary" onclick="toggleDialog(false);">Cancel</button>
+                </section>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <h1>Progress Bar
+            <span class="documentation">
+                <a href="components.html#progress-bar" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
+        <div class="progress-bar infinite">
+            <div class="progress-bar-percentage"></div>
+        </div>
+
+        <!-- Progress Wheel -->
+        <h1>Progress Wheel
+            <span class="documentation">
+                <a href="components.html#progress-wheel" target="_blank" class="internal" title="View documentation">
+                    <img src="src/icons/help.svg" alt="Help">
+                </a>
+            </span>
+        </h1>
+        <div class="progress-wheel infinite"></div>
+
+    </div>
+
+    <button id="darkModeToggle" class="default" onclick="toggleDarkMode();" title="Toggle dark/light mode">
+        <img id="icon-dark" src="src/icons/dark.svg">
+        <img id="icon-light" src="src/icons/light.svg">
+    </button>
+</body>
+
+</html>

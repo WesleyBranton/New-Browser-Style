@@ -9,6 +9,7 @@ Some code snippets may contain placeholders. These are surrounded with % charact
 > - [Sections](#sections)
 >   - [Regular section](#regular-section)
 >   - [Section with description](#section-with-description)
+>   - [Collapsible Section](#collapsible-section)
 >   - [Section note](#section-note)
 >   - [Header](#header)
 >   - [Footer](#footer)
@@ -18,6 +19,12 @@ Some code snippets may contain placeholders. These are surrounded with % charact
 > - [Message bars](#message-bars)
 > - [Buttons](#buttons)
 > - [Links](#links)
+> - [Checkboxes](#checkboxes)
+> - [Radio Buttons](#radio-buttons)
+> - [Switches](#switches)
+> - [Dialogs](#dialogs)
+> - [Progress Bar](#progress-bar)
+> - [Progress Wheel](#progress-wheel)
 
 ## Theme
 This library supports both light and dark mode. The theme class **MUST** be set on the HTML element of the document. If no theme is set, the theme will automatically be applied based on whether the user's browser has requested the light mode or dark mode version using the `prefers-color-scheme` media query.
@@ -129,6 +136,107 @@ A section with a description consists of two sections: one is the main content a
 </div>
 <div class="panel-section help-row">
     <!-- Description --> 
+</div>
+```
+
+## Collapsible Section
+A collapsible section can be hidden by the user and is a great place for storing advanced options on a settings page. You can create your own button to toggle the collapsible panel instead of using the provided `panel-collapsible-header` element.
+
+> **IMPORTANT:**
+> When toggling a collapsible section, make sure to set the `data-state` attribute on both the `panel-collapsible` and `panel-collapsible-header` elements.
+
+> **TIP:**
+> Including a `data-target` attribute on your collapsible panel header that matches the `id` attribute of your collapsible panel will make it easy to toggle the panel using Javascript.
+
+#### Animation
+The collapsible panel can be animated by setting the `max-height` of the panel when the user toggles the panel to open. When animating a panel, it is recommended that you remove the `max-height` from the panel after the animation is completed. Failing to do so could cause issues if the content in the panel resizes or reflows.
+
+Additionally, it's recommended that you set the `display` property of the panel to `none` after the opening animation is completed. Failing to do so will cause issues with keyboard navigation selecting items that are within the closed panel.
+
+Animations are automatically disabled if the user has disabled animations on their system, as recommended by the WCAG standards.
+
+#### Types
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Class</th>
+        <th>Version</th>
+    </tr>
+    <tr>
+        <td>Default</td>
+        <td>None</td>
+        <td>2.1+</td>
+    </tr>
+    <tr>
+        <td>Animated</td>
+        <td><code>animated</code></td>
+        <td>2.1+</td>
+    </tr>
+</table>
+
+#### States
+<table>
+    <tr>
+        <th>State</th>
+        <th>Value</th>
+        <th>Version</th>
+    </tr>
+    <tr>
+        <td>Collapsed</td>
+        <td><code>close</code></td>
+        <td>2.1+</td>
+    </tr>
+    <tr>
+        <td>Open</td>
+        <td><code>open</code></td>
+        <td>2.1+</td>
+    </tr>
+</table>
+
+#### Icons
+<table>
+    <tr>
+        <th>Icon</th>
+        <th>Class</th>
+        <th>Version</th>
+    </tr>
+    <tr>
+        <td>No icon</td>
+        <td>None</td>
+        <td>2.1+</td>
+    </tr>
+    <tr>
+        <td>Icon on left</td>
+        <td><code>icon-left</code></td>
+        <td>2.1+</td>
+    </tr>
+    <tr>
+        <td>Icon on right</td>
+        <td><code>icon-right</code></td>
+        <td>2.1+</td>
+    </tr>
+</table>
+
+#### Code
+```html
+<button class="panel-section panel-collapsible-header %ICON%" data-state="%STATE%">
+    <!-- Title -->
+</button>
+<div class="panel-collapsible" data-state="%STATE%">
+    <!-- Content -->
+</div>
+```
+
+#### Example
+```html
+<button class="panel-section panel-collapsible-header icon-right" data-state="close" data-target="collapsible1">
+    <span>Advanced Setting</span>
+</button>
+<div id="collapsible1" class="panel-collapsible" data-state="close">
+    <div class="panel-section">
+        <label>Erase your current settings</label>
+        <button class="secondary">Restore To Default</button>
+    </div>
 </div>
 ```
 
@@ -433,7 +541,7 @@ Links are automatically detected as external if the URL attached to them include
 
 Classes are provided to allow developers to manually specify the link type. It's highly recommended that developers include the link type class to ensure that links are not incorrectly marked by the automatic detection. These classes always override automatic detection, so they can be used to fix incorrectly marked links. But these classes should **NOT** used to mislead users into thinking that they are clicking an internal link that's actually external or vice versa.
 
-#### Type
+#### Types
 <table>
     <tr>
         <th>Type</th>
@@ -468,4 +576,246 @@ Classes are provided to allow developers to manually specify the link type. It's
 <a href="https://mozilla.org">Auto detect (is external)</a>
 <a href="/about" class="internal">Internal</a>
 <a href="https://mozilla.org" class="external">External</a>
+```
+
+## Checkboxes
+When using this library, you can choose to have the checkbox style match the rest of the elements on the page. To do this, simply add the "checkbox" class to the element.
+
+There are currently no additional options to provide for this component.
+
+#### Types
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Class</th>
+        <th>Version</th>
+    </tr>
+    <tr>
+        <td>Default</td>
+        <td>None</td>
+        <td>2.1+</td>
+    </tr>
+</table>
+
+#### Code
+```html
+<input class="checkbox" type="checkbox">
+```
+
+#### Example
+```html
+<input class="checkbox" type="checkbox">
+```
+
+## Radio Buttons
+When using this library, you can choose to have the radio button style match the rest of the elements on the page. To do this, simply add the "radio" class to the element.
+
+There are currently no additional options to provide for this component.
+
+#### Types
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Class</th>
+        <th>Version</th>
+    </tr>
+    <tr>
+        <td>Default</td>
+        <td>None</td>
+        <td>2.1+</td>
+    </tr>
+</table>
+
+#### Code
+```html
+<input class="radio" type="radio">
+```
+
+#### Example
+```html
+<input class="radio" type="radio">
+```
+
+## Switches
+Switches are a widely accepted alternative to checkboxes, especially when working on mobile platforms. This library allows developers to easily replace a checkbox with a switch by adding the required class to the HTML checkbox element.
+
+By default, turning a switch on or off will show an animation. However, this animation can be disabled by using a class. To ensure that the switch complies with criterion 2.3.3 of Web Content Accessibility Guidelines, this animation is automatically disabled if the user has animations disabled in their settings.
+
+#### Animations
+<table>
+    <tr>
+        <th>Animation</th>
+        <th>Class</th>
+        <th>Version</th>
+    </tr>
+    <tr>
+        <td>Default</td>
+        <td>None</td>
+        <td>2.1+</td>
+    </tr>
+    <tr>
+        <td>None</td>
+        <td><code>no-animate</code></td>
+        <td>2.1+</td>
+    </tr>
+</table>
+
+#### Code
+```html
+<input class="switch %ANIMATION%" type="checkbox">
+```
+
+#### Example
+```html
+<input class="switch" type="checkbox">
+```
+
+## Dialogs
+A dialog (sometimes called a popup or modal) includes content that is only visible to the user under certain situations. When the dialog is open, it appears above all other content on the page.
+
+Dialogs can contain any content that would otherwise be visible on the page, including sections. By default, the content of a dialog can take up 60% of the user's viewport height. If the content exceeds that size, the content within the dialog will become scrollable. This can be adjusted using CSS by setting the `max-height` of the `dialog-content` element.
+
+By default, the dialog will take up 80% of the user's viewport width at a maximum of 600px. The width and maximum width of the dialog can be adjusted using CSS by setting the `width` and `max-width` respectively of the `dialog-container` element.
+
+> **TIP:**
+> To ensure that your website works properly for users that depend on keyboard navigation, it's recommended that you set the `tab-index` values of all content that is not in the dialog to `-1`. This will limit keyboard navigation to only what's in the dialog. Failing to do this will make it possible for the user to focus and edit fields that are not included in the dialog.
+
+#### States
+<table>
+    <tr>
+        <th>State</th>
+        <th>Value</th>
+        <th>Version</th>
+    </tr>
+    <tr>
+        <td>Hidden</td>
+        <td><code>close</code></td>
+        <td>2.1+</td>
+    </tr>
+    <tr>
+        <td>Visible</td>
+        <td><code>open</code></td>
+        <td>2.1+</td>
+    </tr>
+</table>
+
+#### Code
+```html
+<div class="dialog" data-state="%STATE%">
+    <div class="dialog-container">
+        <section class="dialog-header">
+            %HEADER_CONTENT%
+        </section>
+        <section class="dialog-content">
+            %CONTENT%
+        </section>
+        <section class="dialog-footer">
+            %FOOTER_CONTENT%
+        </section>
+    </div>
+</div>
+```
+
+#### Example
+```html
+<div class="dialog" data-state="close">
+    <div class="dialog-container">
+        <section class="dialog-header">
+            Title Here
+        </section>
+        <section class="dialog-content">
+            Content Here
+        </section>
+        <section class="dialog-footer">
+            <button class="default">Ok</button>
+            <button class="secondary">Cancel</button>
+        </section>
+    </div>
+</div>
+```
+
+## Progress Bar
+Progress bars can be used to indicate when something is loading or in cases where you need to display progress to the user. For example, when a page is loading or at the bottom of a form with multiple pages.
+
+This library includes two types of progress bars: Percentage or infinite.
+
+To adjust the percentage of a loading bar, update the CSS `width` of the `progress-bar-percentage` element. When using an infinite progress bar, the `progress-bar-percentage` element is not required.
+
+The progress bar can also be anchored to the top of the page by providing the special class.
+
+#### Types
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Class</th>
+        <th>Version</th>
+    </tr>
+    <tr>
+        <td>Default</td>
+        <td>None</td>
+        <td>2.1+</td>
+    </tr>
+    <tr>
+        <td>Infinite</td>
+        <td><code>infinite</code></td>
+        <td>2.1+</td>
+    </tr>
+</table>
+
+#### Special
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Class</th>
+        <th>Version</th>
+    </tr>
+    <tr>
+        <td>Anchor to top of page</td>
+        <td><code>fixed-top</code></td>
+        <td>2.1+</td>
+    </tr>
+</table>
+
+#### Code
+```html
+<div class="progress-bar %TYPE% %SPECIAL%">
+    <div class="progress-bar-percentage"></div>
+</div>
+```
+
+#### Example
+```html
+<div class="progress-bar">
+    <div class="progress-bar-percentage"></div>
+</div>
+```
+
+## Progress Wheel
+A progress wheel is a spinning loading wheel that can be used to display when something is loading. The library only currently supports an infinite progress wheel.
+
+> **IMPORTANT:**
+> The `infinite` class is required.
+
+#### Animations
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Class</th>
+        <th>Version</th>
+    </tr>
+    <tr>
+        <td>Infinite</td>
+        <td><code>infinite</code></td>
+        <td>2.1+</td>
+    </tr>
+</table>
+
+#### Code
+```html
+<div class="progress-wheel %TYPE%"></div>
+```
+
+#### Example
+```html
+<div class="progress-wheel infinite"></div>
 ```
