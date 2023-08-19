@@ -385,15 +385,15 @@ select:-moz-focusring * {
     min-height: 3em;
 }
 
-.browser-style .panel-section-tabs-button:enabled:hover,
-.browser-style .panel-section-tabs-button:enabled.hover {
+.browser-style .panel-section-tabs-button:not(.selected):enabled:hover,
+.browser-style .panel-section-tabs-button:not(.selected):enabled.hover {
     background: var(--tab-button-background-hover);
     border-bottom-color: var(--tab-button-border);
 }
 
-.browser-style .panel-section-tabs-button:enabled:active,
-.browser-style .panel-section-tabs-button:enabled.active,
-.browser-style .panel-section-tabs-button:enabled.pressed {
+.browser-style .panel-section-tabs-button:not(.selected):enabled:active,
+.browser-style .panel-section-tabs-button:not(.selected):enabled.active,
+.browser-style .panel-section-tabs-button:not(.selected):enabled.pressed {
     background: var(--tab-button-background-active);
     border-bottom-color: var(--tab-button-border);
 }
